@@ -1,0 +1,203 @@
+*{
+    padding: 0;
+    margin: 0;
+    border: 0;
+    list-style-type: none;
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+}
+
+a{
+    color: white;
+}
+
+/*background*/
+
+.background{
+   height: 140vh;
+   width: 100%;
+   background-image: url(../assets/imgs/background-cadastrar.png);
+   display: flex;
+   justify-content: center;
+   background-size: cover;
+   flex-direction: column;
+   align-items: center;
+}
+
+/*header*/
+
+
+.header{
+    height: 20vh;
+    width: 95%;
+    background-color: rgb(0, 0, 0, 0.3);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 65px;
+    position: absolute;
+    top: 0;
+    margin-top: 20px;
+    border-bottom: 2px solid;
+    
+}
+
+.logo img{
+    width: 200px;
+    margin-left: 50px;
+}
+
+.header_info{
+    display: flex;    
+}
+
+.header_info a{
+    margin-right: 100px;
+}
+
+/*cartão de cadastro*/
+
+
+
+.card_cadastro{
+    width: 95%;
+    height:100vh;
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 130px;
+    border: black 2px solid;
+    border-radius: 100px;
+    background-color: rgb(0, 0, 0, 0.3  );
+    color: white;
+}
+
+.card_cadastro li{
+    margin-top: 60px;
+}
+
+.confirmacoes {
+    margin-top: 67px;
+}
+
+.card_cadastro h1{
+    margin-top: 30px;
+}
+
+/*personalização das inputs*/
+
+
+input {
+	width: 250px;
+	height: 35px;
+	border-radius: 30px 30px 30px 30px;
+	border: none;
+    background-color: rgba(0, 0, 0, 0.2);
+	border-bottom: #ffffff solid 1px;
+	outline: none;
+	color: #fff;
+	transition: all 0.3s;
+}
+
+input::placeholder {
+	color: rgba(255, 255, 255, 0.648);
+}
+
+input:focus {
+	background-color: rgba(0, 0, 0, 0.7);
+	border-bottom: rgb(255, 255, 255) solid 2px;
+}
+
+input:hover {
+	background-color: rgba(0, 0, 0, 0.7);
+}
+
+/*personalização dos botões*/
+
+
+li button {
+	color: rgb(255, 255, 255);
+	background-color: transparent;
+	height: 45px;
+	width: 250px;
+	border-radius: 25px;
+	border: #ffffff 2px solid;
+	cursor: pointer;
+	transition: 1s ease;
+    margin-top: 20px;
+}
+
+li button:hover {
+	background: rgb(0, 0, 0, 0.7)
+}
+
+/*footer*/
+
+
+.footer{
+    height: 15vh;
+    width: 100;
+    background-color: black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+}
+
+
+
+.footer_info{
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.footer_info li{
+    margin-right: 40px;
+}
+
+
+.info {
+    display: flex;
+    align-items: center;
+}
+
+.info img{
+    width: 40px;
+}
+
+.info li{
+    margin-left: 40px;
+}
+
+h5{
+    margin-left: 5px;
+}
+
+.suporte img{
+    width: 50px;
+}
+
+
+.redes{
+    display: flex;
+    margin: 10px 0 0 35px;
+}
+
+.pagina_atual{
+    color: rgb(255, 255, 255);
+    border-bottom: 2px rgb(255, 255, 255) solid;
+    border-radius: 5px 5px 5px 5px;
+    height: 18px;
+    width: 73px;
+  
+  
+}
+
+
+
+
+
+
+
