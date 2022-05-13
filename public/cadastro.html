@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>PRO  FISHING | Cadastro</title>
+
+
+    <script src="./js/funcoes.js"></script>
+
+
+    <link rel="icon" href="./assets/icon/favicon.ico">
+    <link rel="stylesheet" href="./css/cadastro.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+        <div class="background">
+            <div class="header">
+                <ul class="logo">                
+                    <li><img src="assets/imgs/LOGO.png"></li>
+                </ul>
+
+                <div class="header_info">
+                    <a href="">Sobre</a>
+                    <a href="index.html">Inicial</a>
+                    <a href="login.html">Entrar</a>
+                    <a class="pagina_atual" href="cadastro.html">Cadastrar</a>
+                </div>
+
+            </div>
+
+            <div class="card_cadastro">
+               <ul>
+                   <h1>Cadastre-se</h1>
+                   <li>Nome: <br> <input id="nome_input" type="text"></li>
+                   <li>Email: <br> <input id="email_input" type="text"></li>
+                   <li>Senha: <br> <input id="senha_input" type="password"></li>
+                   <li>Telefone: <br> <input id="telefone_input" type="text"></li>
+               </ul>
+
+                <ul class="confirmacoes">
+                    <li>Sobrenome: <br> <input id="sobrenome_input" type="text"></li>
+                    <li>Confirme o Email: <br> <input id="confirmacao_email_input" type="text"></li>
+                    <li>Confirme a Senha: <br> <input id="confirmacao_senha_input" type="password"></li>
+                    <li><button onclick="cadastrar()">Cadastrar</button></li>
+                </ul>
+
+            </div>
+       </div>
+       <div class="footer">
+           <ul class="info">
+                <li><img  src="assets/imgs/localizacao.png" alt=""></li>
+                <h5> Avenida do Realismo, 11 - Embu das Artes</h5>
+                <li><img  src="assets/imgs/telefone.png" alt=""></li>
+                <h5>  (11) 5555-5555</h5>
+                <li><img  src="assets/imgs/email.jpg" alt=""></li>
+                <h5>profishing@gmail.com</h5>
+                <li class="suporte"><img src="assets/imgs/suporte.png" alt=""></li>
+                <h5><a href="suporte.html">Suporte</a></h5>
+           </ul>
+
+           <ul class="footer_info">
+                <h3>Redes Sociais</h3>
+            <div class="redes">
+                <li><img src="assets/imgs/instagram.png" alt=""></li>
+                <li><img src="assets/imgs/facebook.png" alt=""></li>
+                <li><img src="assets/imgs/linkedin.png" alt=""></li>
+            </div>
+           </ul>
+       </div>
+
+       <a href=""></a>
+
+     
+
+
+</body>
+
+</html>
+
+<script>
+    
+    function cadastrar() {
+        
+        var nomeVar = nome_input.value;
+        var sobrenomeVar = sobrenome_input.value
+        var emailVar = email_input.value;
+        var senhaVar = senha_input.value;
+        var telefoneVar = telefone_input.value
+        var confirmacaoSenhaVar = confirmacao_senha_input.value;
+        var confirmacaoEmailVar = confirmacao_email_input.value;
+        var alerta = ""
+
+        if (nomeVar == "" || emailVar == "" || senhaVar == "" || confirmacaoSenhaVar == "" || 
+        confirmacaoEmailVar == "" || telefoneVar == ""){
+            
+            alert ("Preencha todos os campos para prosseguir!");
+
+        }
+     
+        if (emailVar.indexOf("@") == -1 || emailVar.indexOf(".com") == -1) {
+
+            alerta += "Ops, e-mail inválido! Verifique e tente novamente. \n";
+
+        }
+       
+        if (senhaVar != confirmacaoSenhaVar) {
+
+            alerta += "As senhas inseridas devem ser iguais para prosseguir! \n";
+
+        }
+
+        if (emailVar != confirmacaoEmailVar){
+
+            alerta += "Os emails inseridos devem ser iguais para prosseguir! \n";
+
+        }   
+
+        if(alerta != ""){
+            alert(alerta)
+        } 
+
+        else{
+
+        fetch("/usuarios/cadastrar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                nomeServer: nomeVar,
+                sobrenomeServer: sobrenomeVar,
+                telefoneServer: telefoneVar,
+                emailServer: emailVar,
+                senhaServer: senhaVar
+            })
+        }).then(function (resposta) {
+
+            console.log("resposta: ", resposta);
+
+            if (resposta.ok) {
+                limparFormulario();
+                finalizarAguardar();
+            } else {
+                throw ("Houve um erro ao tentar realizar o cadastro!");
+            }
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+        });
+
+        return false;
+    }
+    }
+   
+
+    </script>

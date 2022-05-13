@@ -1,0 +1,245 @@
+*{
+    padding: 0;
+    margin: 0;
+    border: 0;
+    list-style-type: none;
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+}
+
+a{
+    color: white;
+}
+
+/*background*/
+
+.background{
+   height: 160vh;
+   width: 100%;
+   background-image: url(../assets/imgs/background-entrar.png);
+   display: flex;
+   justify-content: center;
+   background-size: cover;
+   flex-direction: column;
+   align-items: center;
+}
+
+/*header*/
+
+
+.header{
+    height: 20vh;
+    width: 95%;
+    background-color: rgb(0, 0, 0, 0.3);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 65px;
+    position: absolute;
+    top: 0;
+    margin-top: 20px;
+    border-bottom: 2px solid;
+    
+}
+
+.logo img{
+    width: 200px;
+    margin-left: 50px;
+}
+
+.logo li{
+    margin: 0;
+}
+
+.header_info{
+    display: flex;    
+}
+
+.header_info a{
+    margin-right: 100px;
+}
+
+/*personalização das inputs*/
+
+
+input {
+	width: 200px;
+	height: 35px;
+	border-radius: 20px 20px 20px 20px;
+	border: none;
+    background-color: rgba(0, 0, 0, 0.2);
+	border-bottom: #ffffff solid 2px;
+	outline: none;
+	color: #fff;
+	transition: all 0.3s;
+}
+
+input::placeholder {
+	color: rgba(255, 255, 255, 0.648);
+}
+
+input:focus {
+	background-color: rgba(0, 0, 0, 0.7);
+	border-bottom: rgb(255, 255, 255) solid 2px;
+}
+
+input:hover {
+	background-color: rgba(0, 0, 0, 0.7);
+}
+
+/*personalização dos botões*/
+
+
+li button {
+	color: rgb(255, 255, 255);
+	background-color: transparent;
+	height: 40px;
+	width: 200px;
+	border-radius: 20px 20px 20px 20px;
+	border: #ffffff 2px solid;
+	cursor: pointer;
+	transition: 1s ease;
+}
+
+li button:hover {
+	background: rgb(0, 0, 0, 0.7)
+}
+
+/*footer*/
+
+
+.footer{
+    height: 15vh;
+    width: 100;
+    background-color: black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+}
+
+
+
+.footer_info{
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.footer_info li{
+    margin-right: 40px;
+}
+
+
+.info {
+    display: flex;
+    align-items: center;
+}
+
+.info img{
+    width: 40px;
+}
+
+.info li{
+    margin-left: 40px;
+}
+
+h5{
+    margin-left: 5px;
+}
+
+.suporte img{
+    width: 50px;
+}
+
+
+.redes{
+    display: flex;
+    margin: 10px 0 0 35px;
+}
+
+.pagina_atual{
+    color: rgb(255, 255, 255);
+    border-bottom: 2px rgb(255, 255, 255) solid;
+    border-radius: 5px 5px 5px 5px;
+    height: 18px;
+    width: 45px;
+  
+  
+}
+
+.card_entrar .line{
+    width: 100%;
+    height: 1px;
+    background-color: #000000;
+    margin-top: 25px;
+}
+
+.card_entrar{
+    width: 42%;
+    height:100vh;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    border: 2px solid black;
+    margin-top: 150px;
+    border-radius: 110px;
+    background-color: rgb(0, 0, 0, 0.3  );
+    color: white;
+}
+
+
+.card_entrar h1{
+    margin-top: 30px;
+}
+
+
+
+.imagens_entrar{
+    display: flex;
+    justify-content: center;
+
+}
+
+.imagens_entrar img{
+    margin-left: 30px;
+}
+
+.imagens_entrar li{
+    margin-top: 20px;  
+    margin-right: 30px;
+}
+
+
+.card_entrar h4{
+    text-align: center;
+    margin: 0;
+}
+
+.entrar li{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: 60px 0 0 0;
+}
+
+.cadastro{
+    height: 20vh;
+    width: 42%;
+    border: black 2px solid;
+    border-radius: 60px 60px 60px 60px;
+    background-color: rgb(0, 0, 0, 0.3  );
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+}
+
+.cadastro a{
+    color: #0095f6;
+}
+

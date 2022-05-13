@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AcquaTec | Login</title>
+
+    <script src="./js/funcoes.js"></script>
+
+    <link rel="icon" href="./assets/icon/favicon.ico">
+    <link rel="stylesheet" href="./css/entrar.css">
+</head>
+
+<body>
+    
+
+    <div class="background">
+        <div class="header">
+            <ul class="logo">                
+                <li><img src="assets/imgs/LOGO.png"></li>
+            </ul>
+
+            <div class="header_info">
+                <a href="">Sobre</a>
+                <a href="index.html">Inicial</a>
+                <a class="pagina_atual" href="login.html">Entrar</a>
+                <a href="cadastro.html">Cadastrar</a>
+            </div>
+
+        </div>
+
+        <div class="card_entrar">
+           <ul class="entrar">
+               <h1>Entrar</h1>
+               <li>Email: <br> <input id="email_input" type="text"></li>
+               <li>Senha: <br> <input id="senha_input" type="password"></li>
+               <li><button onclick="entrar()">Entrar</button></li>
+               <li><h4>OU</h4></li>
+               <li class="line"></li>
+            </ul>
+            <ul class="imagens_entrar"> 
+               <li><img src="assets/imgs/facebook.png" alt=""></li>
+               <li><img src="assets/imgs/instagram.png" alt=""></li>
+               <li><img src="assets/imgs/linkedin.png" alt=""></li>
+            </ul>
+        </div>
+        <div class="cadastro">
+            <h3>Não tem uma conta ? <a href="cadastro.html">Cadastre-se</a></h3>
+        </div>
+   </div>
+
+   <div class="footer">
+       <ul class="info">
+            <li><img  src="assets/imgs/localizacao.png" alt=""></li>
+            <h5> Avenida do Realismo, 11 - Embu das Artes</h5>
+            <li><img  src="assets/imgs/telefone.png" alt=""></li>
+            <h5>  (11) 5555-5555</h5>
+            <li><img  src="assets/imgs/email.jpg" alt=""></li>
+            <h5>profishing@gmail.com</h5>
+            <li class="suporte"><img src="assets/imgs/suporte.png" alt=""></li>
+            <h5><a href="suporte.html">Suporte</a></h5>
+       </ul>
+
+       <ul class="footer_info">
+            <h3>Redes Sociais</h3>
+        <div class="redes">
+            <li><img src="assets/imgs/instagram.png" alt=""></li>
+            <li><img src="assets/imgs/facebook.png" alt=""></li>
+            <li><img src="assets/imgs/linkedin.png" alt=""></li>
+        </div>
+       </ul>
+   </div>
+
+
+</body>
+
+</html>
+
+
+
+<script>
+
+
+    function entrar() {
+
+        var emailVar = email_input.value;
+        var senhaVar = senha_input.value;
+        var alerta = ""
+
+        // TODO: VERIFICAR AS VALIDAÇÕES QUE ELES ESTÃO APRENDENDO EM ALGORITMOS 
+        if (emailVar == "" || senhaVar == "") {
+            alerta += "Preencha todos os campos para prosseguir!";
+        }
+    
+
+        if (emailVar.indexOf("@") == -1 || emailVar.indexOf(".com") == -1) {
+            alerta += "Ops, e-mail inválido! Verifique e tente novamente.";            return false;
+        }
+       
+        console.log("FORM LOGIN: ", emailVar);
+        console.log("FORM SENHA: ", senhaVar);
+
+        fetch("/usuarios/autenticar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                emailServer: emailVar,
+                senhaServer: senhaVar
+            })
+        }).then(function (resposta) {
+            console.log("ESTOU NO THEN DO entrar()!")
+
+            if (resposta.ok) {
+                console.log(resposta);
+
+                resposta.json().then(json => {
+                    console.log(json);
+                    console.log(JSON.stringify(json));
+
+                    sessionStorage.EMAIL_USUARIO = json.email;
+                    sessionStorage.NOME_USUARIO = json.nome;
+                    sessionStorage.ID_USUARIO = json.id;
+
+                    setTimeout(function () {
+                        window.location = "\index.html";
+                    }, 1000); // apenas para exibir o loading
+
+                });
+
+            } else {
+
+                console.log("Houve um erro ao tentar realizar o login!");
+
+                resposta.text().then(texto => {
+                    console.error(texto);
+                    finalizarAguardar(texto);
+                });
+            }
+
+        }).catch(function (erro) {
+            console.log(erro);
+        })
+
+        return false;
+    }
+
+    
+
+    
+
+</script>

@@ -1,0 +1,230 @@
+*{
+    padding: 0;
+    margin: 0;
+    border: 0;
+    list-style-type: none;
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+}
+
+html{
+    scroll-behavior: smooth;    
+}
+
+
+a{
+    color: white;
+}
+
+/*background*/
+
+.background{
+   height: 140vh;
+   width: 100%;
+   background-image: url(../assets/imgs/background-inicial.png);
+   display: flex;
+   justify-content: center;
+   background-size: cover;
+   flex-direction: column;
+   align-items: center;
+}
+
+/*header*/
+
+
+.header{
+    height: 20vh;
+    width: 95%;
+    background-color: rgb(0, 0, 0, 0.3);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 65px;
+    position: absolute;
+    top: 0;
+    margin-top: 20px;
+    border-bottom: 2px solid;
+    
+}
+
+.logo img{
+    width: 200px;
+    margin-left: 50px;
+}
+
+.header_info{
+    display: flex;    
+}
+
+.header_info a{
+    margin-right: 100px;
+}
+
+/*cartão de cadastro*/
+
+
+
+.card_cadastro{
+    width: 95%;
+    height:100vh;
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 130px;
+    border: black 2px solid;
+    border-radius: 100px;
+    background-color: rgb(0, 0, 0, 0.3  );
+    color: white;
+}
+
+.card_cadastro li{
+    margin-top: 60px;
+}
+
+.confirmacoes {
+    margin-top: 67px;
+}
+
+.card_cadastro h1{
+    margin-top: 30px;
+}
+
+/*footer*/
+
+
+.footer{
+    height: 15vh;
+    width: 100;
+    background-color: black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+}
+
+
+
+.footer_info{
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.footer_info li{
+    margin-right: 40px;
+}
+
+
+.info {
+    display: flex;
+    align-items: center;
+}
+
+.info img{
+    width: 40px;
+}
+
+.info li{
+    margin-left: 40px;
+}
+
+h5{
+    margin-left: 5px;
+}
+
+.suporte img{
+    width: 50px;
+}
+
+
+.redes{
+    display: flex;
+    margin: 10px 0 0 35px;
+}
+
+.pagina_atual{
+    color: rgb(255, 255, 255);
+    border-bottom: 2px rgb(255, 255, 255) solid;
+    border-radius: 5px 5px 5px 5px;
+    height: 18px;
+    width: 43px;
+}
+
+
+.frase_efeito{
+    position: absolute;
+    right: 0;
+    margin-right: 200px;
+}
+
+.valores{
+    height: 120vh;
+    width: 100%;
+    background-image: url(../assets/imgs/background-sobre-mim.png);
+    background-size: cover;
+}
+
+.sobre_mim{
+    height: 20vh;
+    width: 100%;
+    background-color: rgb(0, 0, 0, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.texto_sobre_mim{
+    width: 50%;
+    height: 80%;
+    color: white;
+    margin: 30px 0 0 30px; 
+    font-size: 20px;
+}
+
+
+
+.momentos{
+    background-image: url(../assets/imgs-recordacoes/back.png);
+    height: 160vh;
+    width: 100%;
+    background-size: cover;
+}
+
+.mural{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+
+.imagens_horizontais IMG{
+    width: 440px;
+    margin: 30px 0 0 30px;
+    display: block;
+    border-radius: 10px;
+}
+
+.imagens_verticais img{
+    width: 216px;
+    margin: 30PX 0 0 60PX;
+    border-radius: 10px;
+
+}
+
+
+.mural{
+    height: 20vh;
+    width: 100%;
+    background-color: rgb(0, 0, 0, 0.7);
+    display: flex;
+}
+
+.ajuste_img{
+    display: flex;
+}
+
+
+
