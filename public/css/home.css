@@ -1,0 +1,161 @@
+*{
+    padding: 0;
+    margin: 0;
+    border: 0;
+    list-style-type: none;
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+}
+
+a{
+    color: white;
+}
+
+/*background*/
+
+.background{
+   height: 200vh;
+   width: 100%;
+    background-color: blueviolet;
+   display: flex;
+   background-size: cover;
+   flex-direction: column;
+   align-items: center;
+}
+
+/*header*/
+
+
+.header{
+    height: 20vh;
+    width: 95%;
+    background-color: rgb(0, 0, 0, 0.3);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 65px;
+    position: absolute;
+    top: 0;
+    margin-top: 20px;
+    border-bottom: 2px solid;
+    
+}
+
+.logo img{
+    width: 200px;
+    margin-left: 50px;
+}
+
+.header_info{
+    display: flex;    
+}
+
+.header_info a{
+    margin-right: 100px;
+}
+
+.footer{
+    height: 15vh;
+    width: 100;
+    background-color: black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    bottom: 0;
+}
+
+
+
+.footer_info{
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.footer_info li{
+    margin-right: 40px;
+}
+
+
+.info {
+    display: flex;
+    align-items: center;
+}
+
+.info img{
+    width: 40px;
+}
+
+.info li{
+    margin-left: 40px;
+}
+
+h5{
+    margin-left: 5px;
+}
+
+.suporte img{
+    width: 50px;
+}
+
+
+.redes{
+    display: flex;
+    margin: 10px 0 0 35px;
+}
+
+.pagina_atual{
+    color: rgb(255, 255, 255);
+    border-bottom: 2px rgb(255, 255, 255) solid;
+    border-radius: 5px 5px 5px 5px;
+    height: 18px;
+    width: 73px;
+}
+
+
+
+.imagens img{
+    width: 240px;
+    
+}
+
+.imagens {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 40px;
+    
+}
+
+.imagens div{
+    margin-right: 30px;
+    margin-top: 60px;
+}
+
+
+
+
+.container{
+    height: 160vh;
+    width: 100%;
+    background-color: rgb(0, 0, 0, 0.3);
+    margin-top: 200px;
+    color: #ffffff;
+}
+
+.teste{
+    height: 20vh;
+    width: 100% ;
+    background-color: cyan;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+
+
