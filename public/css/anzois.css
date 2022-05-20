@@ -159,6 +159,10 @@ h5{
     border-radius: 20px;
 }
 
+.itens:hover{
+    box-shadow: 10px 5px 5px black;
+}
+
 button {
 	color: rgb(255, 255, 255);
 	background-color: black;
