@@ -16,109 +16,485 @@
                 <li><img src="assets/imgs/LOGO.png"></li>
             </ul>
             <div class="header_info">
-                <a href="home.html" href="">Espécies</a>
-                <a class="pagina_atual" href="Anzois.html">Anzóis</a>
-                <a href="">Varas</a>
-                <a href="">Linhas</a>
-                <a href="">Carretilhas</a>
-                <a href="">Iscas</a>
+                <a href="home.html">Espécies</a>
+                <a onclick="pagina_anzois()" class="pagina_atual">Anzóis</a>
+                <a onclick="pagina_varas()">Varas</a>
+                <a onclick="pagina_linhas()">Linhas</a>
+                <a onclick="pagina_carretilhas()">Carretilhas</a>
+                <a onclick="pagina_iscas()">Iscas</a>
+                <a href="">Carrinho:     <span id="itens_carrinho">0</span></a>   
             </div>
         </div>
 
-        <div class="container">
-            <div>
-                <div class="anzol">
-                    <img src="assets/anzol/crystal-marina.webp" alt="">
-                    <h5>Anzol 16902 Crystal - Marine Sports</h5>
-                    <h5>R$ 47,86</h5>
-                    <button>Adicionar ao Carrinho</button>
+        <div id="div_anzois" class="container anzois">
+            <img src="assets/imgs/14.png" alt="">
+                <div>
+                    <div class="itens">
+                        <img src="assets/anzol/crystal-marina.webp" alt="">
+                        <h5>Anzol 16902 Crystal - Marine Sports</h5>
+                        <h5>R$ 47,86</h5>
+                        <button onclick="adiconar_carrinho()">Adicionar ao Carrinho</button>
+                    </div>
+
+                    <div class="itens">
+                        <img src="assets/anzol/anzol 260.webp" alt="">
+                        <h5>Anzol 260H Crystal - n° 02 (c/ 50 unid.)</h5>
+                        <h5>R$ 17,00</h5>
+                        <button onclick="adiconar_carrinho()">Adicionar ao Carrinho</button>
+                    </div>
+
+                    <div class="itens">
+                        <img src="assets/anzol/anzol4330.webp" alt="">
+                        <h5>Anzol 4330 Super Strong - nº 02 (c/ 50 unid.)</h5>
+                        <h5>R$ 10,90</h5>
+                        <button onclick="adiconar_carrinho()">Adicionar ao Carrinho</button>
+                    </div>
+
+                    <div class="itens">
+                        <img src="assets/anzol/anzol5013.webp" alt="">
+                        <h5>Anzol 5013 F - nº 2/0 (c/ 05 unid.)</h5>
+                        <h5>R$ 21,90</h5>
+                        <button onclick="adiconar_carrinho()">Adicionar ao Carrinho</button>
+                    </div>
+
                 </div>
 
-                <div class="anzol">
-                    <img src="assets/anzol/anzol 260.webp" alt="">
-                    <h5>Anzol 260H Crystal - n° 02 (c/ 50 unid.)</h5>
-                    <h5>R$ 17,00</h5>
-                    <button>Adicionar ao Carrinho</button>
+                <div>
+                    <div class="itens">
+                        <img src="assets/anzol/anzol 53853.webp" alt="">
+                        <h5>Anzol 53853 Yamajin Maruseigo</h5>
+                        <h5>R$ 21,34</h5>
+                        <button onclick="adiconar_carrinho()">Adicionar ao Carrinho</button>
+                    </div>
+                    
+                    <div class="itens">
+                        <img src="assets/anzol/anzol big river.webp" alt="">
+                        <h5>Anzol Big River Bait (c/ 3 unid.) </h5>
+                        <h5>R$ 113,73</h5>
+                        <button onclick="adiconar_carrinho()">Adicionar ao Carrinho</button>
+                    </div>
+                    <div class="itens">
+                        <img src="assets/anzol/chinu ring.webp" alt="">
+                        <h5>Anzol Chinu Ring Black Nickel</h5>
+                        <h5>R$ 9,40</h5>
+                        <button onclick="adiconar_carrinho()">Adicionar ao Carrinho</button>
+                    </div>
+                    
+                    <div class="itens">
+                        <img src="assets/anzol/pinnacle.webp" alt="">
+                        <h5>Anzol Chinu Ring (KH-10026) - Nickel</h5>
+                        <h5>R$ 13,75</h5>
+                        <button onclick="adiconar_carrinho()">Adicionar ao Carrinho</button>
+                    </div>
                 </div>
 
-                <div class="anzol">
-                    <img src="assets/anzol/anzol4330.webp" alt="">
-                    <h5>Anzol 4330 Super Strong - nº 02 (c/ 50 unid.)</h5>
-                    <h5>R$ 10,90</h5>
-                    <button>Adicionar ao Carrinho</button>
-                </div>
-            </div>
+                <div>
+                    <div class="itens">
+                        <img src="assets/anzol/iseama.webp" alt="">
+                        <h5>Anzol Iseama-Bravo - Gamakatsu</h5>
+                        <h5>R$ 25,00</h5>
+                        <button onclick="adiconar_carrinho()">Adicionar ao Carrinho</button>
+                    </div>
+                    <div class="itens">
+                        <img src="assets/anzol/live bait.webp" alt="">
+                        <h5>Anzol Live Bait - Marine Sports</h5>
+                        <h5>R$ 30,90</h5>
+                        <button onclick="adiconar_carrinho()">Adicionar ao Carrinho</button>
+                    </div>
+                    
+                    <div class="itens">
+                        <img src="assets/anzol/maruseigo.webp" alt="">
+                        <h5>Anzol Maruseigo Nickel - Marine Sports</h5>
+                        <h5>R$ 12,74</h5>
+                        <button onclick="adiconar_carrinho()">Adicionar ao Carrinho</button>
+                    </div>
+                    
+                    <div class="itens">
+                        <img src="assets/anzol/off set.webp" alt="">
+                        <h5>Anzol Off Set EWG - 8/0 Monster 3X</h5>
+                        <h5>R$ 32,89</h5>
+                        <button onclick="adiconar_carrinho()">Adicionar ao Carrinho</button>
+                    </div>
 
-            <div>
-                <div class="anzol">
-                    <img src="assets/anzol/anzol5013.webp" alt="">
-                    <h5>Anzol 5013 F - nº 2/0 (c/ 05 unid.)</h5>
-                    <h5>R$ 21,90</h5>
-                    <button>Adicionar ao Carrinho</button>
                 </div>
-    
-                <div class="anzol">
-                    <img src="assets/anzol/anzol 53853.webp" alt="">
-                    <h5>Anzol 53853 Yamajin Maruseigo (c/ 06 unid.) </h5>
-                    <h5>R$ 21,34</h5>
-                    <button>Adicionar ao Carrinho</button>
-                </div>
-    
-                <div class="anzol">
-                    <img src="assets/anzol/anzol big river.webp" alt="">
-                    <h5>Anzol Big River Bait (c/ 3 unid.) </h5>
-                    <h5>R$ 113,73</h5>
-                    <button>Adicionar ao Carrinho</button>
-                </div>
-            </div>
-
-            <div class="fileira01">
-                <div class="anzol">
-                    <img src="assets/anzol/chinu ring.webp" alt="">
-                    <h5>Anzol Chinu Ring (KH-10026)  Black Nickel</h5>
-                    <h5>R$ 9,40</h5>
-                    <button>Adicionar ao Carrinho</button>
-                </div>
-    
-                <div class="anzol">
-                    <img src="assets/anzol/pinnacle.webp" alt="">
-                    <h5>Anzol Chinu Ring (KH-10026) - Nickel</h5>
-                    <h5>R$ 13,75</h5>
-                    <button>Adicionar ao Carrinho</button>
-                </div>
-    
-                <div class="anzol">
-                    <img src="assets/anzol/iseama.webp" alt="">
-                    <h5>Anzol Iseama-Bravo - Gamakatsu</h5>
-                    <h5>R$ 25,00</h5>
-                    <button>Adicionar ao Carrinho</button>
-                </div>
-            </div>
-
-            <div class="fileira01">
-                <div class="anzol">
-                    <img src="assets/anzol/live bait.webp" alt="">
-                    <h5>Anzol Live Bait - Marine Sports</h5>
-                    <h5>R$ 30,90</h5>
-                    <button>Adicionar ao Carrinho</button>
-                </div>
-    
-                <div class="anzol">
-                    <img src="assets/anzol/maruseigo.webp" alt="">
-                    <h5>Anzol Maruseigo Nickel - Marine Sports</h5>
-                    <h5>R$ 12,74</h5>
-                    <button>Adicionar ao Carrinho</button>
-                </div>
-    
-                <div class="anzol">
-                    <img src="assets/anzol/off set.webp" alt="">
-                    <h5>Anzol Off Set EWG   - 8/0 Monster 3X</h5>
-                    <h5>R$ 32,89</h5>
-                    <button>Adicionar ao Carrinho</button>
-                </div>
-            </div>
-
         </div>
+
+        
+        <div id="div_varas" class="container varas">
+            <img src="assets/imgs/15.png" alt="">
+                <div>
+                    <div class="itens">
+                        <img src="assets/anzol/crystal-marina.webp" alt="">
+                        <h5>Anzol 16902 Crystal - Marine Sports</h5>
+                        <h5>R$ 47,86</h5>
+                        <button onclick="adiconar_carrinho()">Adicionar ao Carrinho</button>
+                    </div>
+
+                    <div class="itens">
+                        <img src="assets/anzol/anzol 260.webp" alt="">
+                        <h5>Anzol 260H Crystal - n° 02 (c/ 50 unid.)</h5>
+                        <h5>R$ 17,00</h5>
+                        <button onclick="adiconar_carrinho()">Adicionar ao Carrinho</button>
+                    </div>
+
+                    <div class="itens">
+                        <img src="assets/anzol/anzol4330.webp" alt="">
+                        <h5>Anzol 4330 Super Strong - nº 02 (c/ 50 unid.)</h5>
+                        <h5>R$ 10,90</h5>
+                        <button onclick="adiconar_carrinho()">Adicionar ao Carrinho</button>
+                    </div>
+
+                    <div class="itens">
+                        <img src="assets/anzol/anzol5013.webp" alt="">
+                        <h5>Anzol 5013 F - nº 2/0 (c/ 05 unid.)</h5>
+                        <h5>R$ 21,90</h5>
+                        <button onclick="adiconar_carrinho()">Adicionar ao Carrinho</button>
+                    </div>
+
+                </div>
+
+                <div>
+                    <div class="itens">
+                        <img src="assets/anzol/anzol 53853.webp" alt="">
+                        <h5>Anzol 53853 Yamajin Maruseigo</h5>
+                        <h5>R$ 21,34</h5>
+                        <button onclick="adiconar_carrinho()">Adicionar ao Carrinho</button>
+                    </div>
+                    
+                    <div class="itens">
+                        <img src="assets/anzol/anzol big river.webp" alt="">
+                        <h5>Anzol Big River Bait (c/ 3 unid.) </h5>
+                        <h5>R$ 113,73</h5>
+                        <button onclick="adiconar_carrinho()">Adicionar ao Carrinho</button>
+                    </div>
+                    <div class="itens">
+                        <img src="assets/anzol/chinu ring.webp" alt="">
+                        <h5>Anzol Chinu Ring Black Nickel</h5>
+                        <h5>R$ 9,40</h5>
+                        <button onclick="adiconar_carrinho()">Adicionar ao Carrinho</button>
+                    </div>
+                    
+                    <div class="itens">
+                        <img src="assets/anzol/pinnacle.webp" alt="">
+                        <h5>Anzol Chinu Ring (KH-10026) - Nickel</h5>
+                        <h5>R$ 13,75</h5>
+                        <button onclick="adiconar_carrinho()">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="itens">
+                        <img src="assets/anzol/iseama.webp" alt="">
+                        <h5>Anzol Iseama-Bravo - Gamakatsu</h5>
+                        <h5>R$ 25,00</h5>
+                        <button onclick="adiconar_carrinho()">Adicionar ao Carrinho</button>
+                    </div>
+                    <div class="itens">
+                        <img src="assets/anzol/live bait.webp" alt="">
+                        <h5>Anzol Live Bait - Marine Sports</h5>
+                        <h5>R$ 30,90</h5>
+                        <button onclick="adiconar_carrinho()">Adicionar ao Carrinho</button>
+                    </div>
+                    
+                    <div class="itens">
+                        <img src="assets/anzol/maruseigo.webp" alt="">
+                        <h5>Anzol Maruseigo Nickel - Marine Sports</h5>
+                        <h5>R$ 12,74</h5>
+                        <button onclick="adiconar_carrinho()">Adicionar ao Carrinho</button>
+                    </div>
+                    
+                    <div class="itens">
+                        <img src="assets/anzol/off set.webp" alt="">
+                        <h5>Anzol Off Set EWG - 8/0 Monster 3X</h5>
+                        <h5>R$ 32,89</h5>
+                        <button onclick="adiconar_carrinho()">Adicionar ao Carrinho</button>
+                    </div>
+
+                </div>
+        </div>
+
+        <div id="div_linhas" class="container linhas">
+            <img src="assets/imgs/16.png" alt="">
+                <div>
+                    <div class="itens">
+                        <img src="assets/anzol/crystal-marina.webp" alt="">
+                        <h5>Anzol 16902 Crystal - Marine Sports</h5>
+                        <h5>R$ 47,86</h5>
+                        <button onclick="adiconar_carrinho()">Adicionar ao Carrinho</button>
+                    </div>
+
+                    <div class="itens">
+                        <img src="assets/anzol/anzol 260.webp" alt="">
+                        <h5>Anzol 260H Crystal - n° 02 (c/ 50 unid.)</h5>
+                        <h5>R$ 17,00</h5>
+                        <button onclick="adiconar_carrinho()">Adicionar ao Carrinho</button>
+                    </div>
+
+                    <div class="itens">
+                        <img src="assets/anzol/anzol4330.webp" alt="">
+                        <h5>Anzol 4330 Super Strong - nº 02 (c/ 50 unid.)</h5>
+                        <h5>R$ 10,90</h5>
+                        <button onclick="adiconar_carrinho()">Adicionar ao Carrinho</button>
+                    </div>
+
+                    <div class="itens">
+                        <img src="assets/anzol/anzol5013.webp" alt="">
+                        <h5>Anzol 5013 F - nº 2/0 (c/ 05 unid.)</h5>
+                        <h5>R$ 21,90</h5>
+                        <button onclick="adiconar_carrinho()">Adicionar ao Carrinho</button>
+                    </div>
+
+                </div>
+
+                <div>
+                    <div class="itens">
+                        <img src="assets/anzol/anzol 53853.webp" alt="">
+                        <h5>Anzol 53853 Yamajin Maruseigo</h5>
+                        <h5>R$ 21,34</h5>
+                        <button onclick="adiconar_carrinho()">Adicionar ao Carrinho</button>
+                    </div>
+                    
+                    <div class="itens">
+                        <img src="assets/anzol/anzol big river.webp" alt="">
+                        <h5>Anzol Big River Bait (c/ 3 unid.) </h5>
+                        <h5>R$ 113,73</h5>
+                        <button onclick="adiconar_carrinho()">Adicionar ao Carrinho</button>
+                    </div>
+                    <div class="itens">
+                        <img src="assets/anzol/chinu ring.webp" alt="">
+                        <h5>Anzol Chinu Ring Black Nickel</h5>
+                        <h5>R$ 9,40</h5>
+                        <button onclick="adiconar_carrinho()">Adicionar ao Carrinho</button>
+                    </div>
+                    
+                    <div class="itens">
+                        <img src="assets/anzol/pinnacle.webp" alt="">
+                        <h5>Anzol Chinu Ring (KH-10026) - Nickel</h5>
+                        <h5>R$ 13,75</h5>
+                        <button onclick="adiconar_carrinho()">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="itens">
+                        <img src="assets/anzol/iseama.webp" alt="">
+                        <h5>Anzol Iseama-Bravo - Gamakatsu</h5>
+                        <h5>R$ 25,00</h5>
+                        <button onclick="adiconar_carrinho()">Adicionar ao Carrinho</button>
+                    </div>
+                    <div class="itens">
+                        <img src="assets/anzol/live bait.webp" alt="">
+                        <h5>Anzol Live Bait - Marine Sports</h5>
+                        <h5>R$ 30,90</h5>
+                        <button onclick="adiconar_carrinho()">Adicionar ao Carrinho</button>
+                    </div>
+                    
+                    <div class="itens">
+                        <img src="assets/anzol/maruseigo.webp" alt="">
+                        <h5>Anzol Maruseigo Nickel - Marine Sports</h5>
+                        <h5>R$ 12,74</h5>
+                        <button onclick="adiconar_carrinho()">Adicionar ao Carrinho</button>
+                    </div>
+                    
+                    <div class="itens">
+                        <img src="assets/anzol/off set.webp" alt="">
+                        <h5>Anzol Off Set EWG - 8/0 Monster 3X</h5>
+                        <h5>R$ 32,89</h5>
+                        <button onclick="adiconar_carrinho()">Adicionar ao Carrinho</button>
+                    </div>
+
+                </div>
+        </div>
+
+        <div id="div_carretilhas" class="container carretilhas">
+            <img src="assets/imgs/17.png" alt="">
+                <div>
+                    <div class="itens">
+                        <img src="assets/anzol/crystal-marina.webp" alt="">
+                        <h5>Anzol 16902 Crystal - Marine Sports</h5>
+                        <h5>R$ 47,86</h5>
+                        <button onclick="adiconar_carrinho()">Adicionar ao Carrinho</button>
+                    </div>
+
+                    <div class="itens">
+                        <img src="assets/anzol/anzol 260.webp" alt="">
+                        <h5>Anzol 260H Crystal - n° 02 (c/ 50 unid.)</h5>
+                        <h5>R$ 17,00</h5>
+                        <button onclick="adiconar_carrinho()">Adicionar ao Carrinho</button>
+                    </div>
+
+                    <div class="itens">
+                        <img src="assets/anzol/anzol4330.webp" alt="">
+                        <h5>Anzol 4330 Super Strong - nº 02 (c/ 50 unid.)</h5>
+                        <h5>R$ 10,90</h5>
+                        <button onclick="adiconar_carrinho()">Adicionar ao Carrinho</button>
+                    </div>
+
+                    <div class="itens">
+                        <img src="assets/anzol/anzol5013.webp" alt="">
+                        <h5>Anzol 5013 F - nº 2/0 (c/ 05 unid.)</h5>
+                        <h5>R$ 21,90</h5>
+                        <button onclick="adiconar_carrinho()">Adicionar ao Carrinho</button>
+                    </div>
+
+                </div>
+
+                <div>
+                    <div class="itens">
+                        <img src="assets/anzol/anzol 53853.webp" alt="">
+                        <h5>Anzol 53853 Yamajin Maruseigo</h5>
+                        <h5>R$ 21,34</h5>
+                        <button onclick="adiconar_carrinho()">Adicionar ao Carrinho</button>
+                    </div>
+                    
+                    <div class="itens">
+                        <img src="assets/anzol/anzol big river.webp" alt="">
+                        <h5>Anzol Big River Bait (c/ 3 unid.) </h5>
+                        <h5>R$ 113,73</h5>
+                        <button onclick="adiconar_carrinho()">Adicionar ao Carrinho</button>
+                    </div>
+                    <div class="itens">
+                        <img src="assets/anzol/chinu ring.webp" alt="">
+                        <h5>Anzol Chinu Ring Black Nickel</h5>
+                        <h5>R$ 9,40</h5>
+                        <button onclick="adiconar_carrinho()">Adicionar ao Carrinho</button>
+                    </div>
+                    
+                    <div class="itens">
+                        <img src="assets/anzol/pinnacle.webp" alt="">
+                        <h5>Anzol Chinu Ring (KH-10026) - Nickel</h5>
+                        <h5>R$ 13,75</h5>
+                        <button onclick="adiconar_carrinho()">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="itens">
+                        <img src="assets/anzol/iseama.webp" alt="">
+                        <h5>Anzol Iseama-Bravo - Gamakatsu</h5>
+                        <h5>R$ 25,00</h5>
+                        <button onclick="adiconar_carrinho()">Adicionar ao Carrinho</button>
+                    </div>
+                    <div class="itens">
+                        <img src="assets/anzol/live bait.webp" alt="">
+                        <h5>Anzol Live Bait - Marine Sports</h5>
+                        <h5>R$ 30,90</h5>
+                        <button onclick="adiconar_carrinho()">Adicionar ao Carrinho</button>
+                    </div>
+                    
+                    <div class="itens">
+                        <img src="assets/anzol/maruseigo.webp" alt="">
+                        <h5>Anzol Maruseigo Nickel - Marine Sports</h5>
+                        <h5>R$ 12,74</h5>
+                        <button onclick="adiconar_carrinho()">Adicionar ao Carrinho</button>
+                    </div>
+                    
+                    <div class="itens">
+                        <img src="assets/anzol/off set.webp" alt="">
+                        <h5>Anzol Off Set EWG - 8/0 Monster 3X</h5>
+                        <h5>R$ 32,89</h5>
+                        <button onclick="adiconar_carrinho()">Adicionar ao Carrinho</button>
+                    </div>
+
+                </div>
+        </div>
+
+        <div id="div_iscas" class="container iscas">
+            <img src="assets/imgs/18.png" alt="">
+                <div>
+                    <div class="itens">
+                        <img src="assets/anzol/crystal-marina.webp" alt="">
+                        <h5>Anzol 16902 Crystal - Marine Sports</h5>
+                        <h5>R$ 47,86</h5>
+                        <button onclick="adiconar_carrinho()">Adicionar ao Carrinho</button>
+                    </div>
+
+                    <div class="itens">
+                        <img src="assets/anzol/anzol 260.webp" alt="">
+                        <h5>Anzol 260H Crystal - n° 02 (c/ 50 unid.)</h5>
+                        <h5>R$ 17,00</h5>
+                        <button onclick="adiconar_carrinho()">Adicionar ao Carrinho</button>
+                    </div>
+
+                    <div class="itens">
+                        <img src="assets/anzol/anzol4330.webp" alt="">
+                        <h5>Anzol 4330 Super Strong - nº 02 (c/ 50 unid.)</h5>
+                        <h5>R$ 10,90</h5>
+                        <button onclick="adiconar_carrinho()">Adicionar ao Carrinho</button>
+                    </div>
+
+                    <div class="itens">
+                        <img src="assets/anzol/anzol5013.webp" alt="">
+                        <h5>Anzol 5013 F - nº 2/0 (c/ 05 unid.)</h5>
+                        <h5>R$ 21,90</h5>
+                        <button onclick="adiconar_carrinho()">Adicionar ao Carrinho</button>
+                    </div>
+
+                </div>
+
+                <div>
+                    <div class="itens">
+                        <img src="assets/anzol/anzol 53853.webp" alt="">
+                        <h5>Anzol 53853 Yamajin Maruseigo</h5>
+                        <h5>R$ 21,34</h5>
+                        <button onclick="adiconar_carrinho()">Adicionar ao Carrinho</button>
+                    </div>
+                    
+                    <div class="itens">
+                        <img src="assets/anzol/anzol big river.webp" alt="">
+                        <h5>Anzol Big River Bait (c/ 3 unid.) </h5>
+                        <h5>R$ 113,73</h5>
+                        <button onclick="adiconar_carrinho()">Adicionar ao Carrinho</button>
+                    </div>
+                    <div class="itens">
+                        <img src="assets/anzol/chinu ring.webp" alt="">
+                        <h5>Anzol Chinu Ring Black Nickel</h5>
+                        <h5>R$ 9,40</h5>
+                        <button onclick="adiconar_carrinho()">Adicionar ao Carrinho</button>
+                    </div>
+                    
+                    <div class="itens">
+                        <img src="assets/anzol/pinnacle.webp" alt="">
+                        <h5>Anzol Chinu Ring (KH-10026) - Nickel</h5>
+                        <h5>R$ 13,75</h5>
+                        <button onclick="adiconar_carrinho()">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="itens">
+                        <img src="assets/anzol/iseama.webp" alt="">
+                        <h5>Anzol Iseama-Bravo - Gamakatsu</h5>
+                        <h5>R$ 25,00</h5>
+                        <button onclick="adiconar_carrinho()">Adicionar ao Carrinho</button>
+                    </div>
+                    <div class="itens">
+                        <img src="assets/anzol/live bait.webp" alt="">
+                        <h5>Anzol Live Bait - Marine Sports</h5>
+                        <h5>R$ 30,90</h5>
+                        <button onclick="adiconar_carrinho()">Adicionar ao Carrinho</button>
+                    </div>
+                    
+                    <div class="itens">
+                        <img src="assets/anzol/maruseigo.webp" alt="">
+                        <h5>Anzol Maruseigo Nickel - Marine Sports</h5>
+                        <h5>R$ 12,74</h5>
+                        <button onclick="adiconar_carrinho()">Adicionar ao Carrinho</button>
+                    </div>
+                    
+                    <div class="itens">
+                        <img src="assets/anzol/off set.webp" alt="">
+                        <h5>Anzol Off Set EWG - 8/0 Monster 3X</h5>
+                        <h5>R$ 32,89</h5>
+                        <button onclick="adiconar_carrinho()">Adicionar ao Carrinho</button>
+                    </div>
+
+                </div>
+        </div>
+
+
+
+
     </div>
 
 
@@ -150,3 +526,53 @@
 </body>
 
 </html>
+
+<script>
+
+        var click = 0
+
+    function adiconar_carrinho(){
+        click ++
+        itens_carrinho.innerHTML = `${click}`   
+    }
+
+    function pagina_anzois(){
+        div_anzois.style.display = "flex"
+        div_varas.style.display = "none"
+        div_linhas.style.display = "none"
+        div_carretilhas.style.display = "none"
+        div_iscas.style.display = "none"
+    }
+
+    function pagina_varas(){
+        div_anzois.style.display = "none"
+        div_varas.style.display = "flex"
+        div_linhas.style.display = "none"
+        div_carretilhas.style.display = "none"
+        div_iscas.style.display = "none"
+    }
+
+    function pagina_linhas(){
+        div_anzois.style.display = "none"
+        div_varas.style.display = "none"
+        div_linhas.style.display = "flex"
+        div_carretilhas.style.display = "none"
+        div_iscas.style.display = "none"
+    }
+
+    function pagina_carretilhas(){
+        div_anzois.style.display = "none"
+        div_varas.style.display = "none"
+        div_linhas.style.display = "none"
+        div_carretilhas.style.display = "flex"
+        div_iscas.style.display = "none"
+    }
+
+    function pagina_iscas(){
+        div_anzois.style.display = "none"
+        div_varas.style.display = "none"
+        div_linhas.style.display = "none"
+        div_carretilhas.style.display = "none"
+        div_iscas.style.display = "flex"
+    }
+</script>

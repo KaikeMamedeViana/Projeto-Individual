@@ -16,7 +16,7 @@ a{
 .background{
    height: 230vh;
    width: 100%; 
-   background-color: rgb(255, 255, 255);
+   background-color: rgb(201, 12, 12);
    display: flex;
    background-size: cover;
    flex-direction: column;
@@ -116,50 +116,83 @@ h5{
 }
 
 .container{
-    height: 185vh;
+    height: 200vh;
     width: 100%;
-    margin-top: 200px;
-    display: flex;
-    justify-content: space-evenly;
-    background-color: rgb(0, 0, 0);
-    color: #ffffff;
-}
-
-.container img{
-    width: 190px;
-}
-
-.anzol{
-    height: 55vh;
-    background-color: rgb(255, 255, 255);
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
+    margin-top: 220px;
+    display: none;
     flex-direction: column;
-    border-radius: 25px;
+    align-items: center;
+    
+}
+
+.container.anzois{
+    display: flex;
 }
 
 .container div{
-    color: rgb(0, 0, 0);
-    margin-top: 30px;
+    display: flex;
+    
 }
 
+.titulo{
+    height: 20vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.itens img{
+    width: 200px;
+}
+
+.itens{
+    background-color: rgb(255, 255, 255);
+    height: 55vh;
+    width: 20vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 30px;
+    margin-right: 40px;
+    border-radius: 20px;
+}
 
 button {
 	color: rgb(255, 255, 255);
-	background-color: rgba(0, 0, 0, 0.8);
-	height: 45px;
-	width: 250px;
-	border-radius: 25px;
+	background-color: black;
+	height: 40px;
+	width: 200px;
+	border-radius: 20px 20px 20px 20px;
 	border: #ffffff 2px solid;
 	cursor: pointer;
 	transition: 1s ease;
-    margin-top: 20px;
 }
 
 button:hover {
-	background: rgb(0, 89, 255, 1)
+	background: rgb(0, 0, 0, 0.7)
 }
 
 
 
+
+.container.varas{
+    display: none;
+}
+
+.container.varas{
+    display: none;
+}
+
+.container.linhas{
+    display: none;
+}
+
+.container.carretilhas{
+    display: none;
+}
+
+.container.iscas{
+    display: none;
+}
