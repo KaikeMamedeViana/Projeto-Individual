@@ -16,7 +16,7 @@ a{
 .background{
    height: 220vh;
    width: 100%; 
-   background-image: url(../assets/imgs/back_home_2.png);
+   background-image: url(../assets/imgs/background-home.gif);
    display: flex;
    background-size: cover;
    flex-direction: column;

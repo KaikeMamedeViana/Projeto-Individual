@@ -16,7 +16,7 @@ a{
 .background{
    height: 230vh;
    width: 100%; 
-   background-color: rgb(201, 12, 12);
+   background-image: url(../assets/imgs/background-home.gif);
    display: flex;
    background-size: cover;
    flex-direction: column;
