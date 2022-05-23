@@ -7,6 +7,27 @@ router.get("/", function (req, res) {
     avisoController.testar(req, res);
 });
 
+
+router.get("/listarAnzois", function (req, res) {
+    avisoController.listarAnzois(req, res);
+});
+
+router.get("/listarVaras", function (req, res) {
+    avisoController.listarVaras(req, res);
+});
+
+router.get("/listarLinhas", function (req, res) {
+    avisoController.listarLinhas(req, res);
+});
+
+router.get("/listarCarretilha", function (req, res) {
+    avisoController.listarCarretilha(req, res);
+});
+
+router.get("/listarIscas", function (req, res) {
+    avisoController.listarIscas(req, res);
+});
+
 router.get("/listar", function (req, res) {
     avisoController.listar(req, res);
 });

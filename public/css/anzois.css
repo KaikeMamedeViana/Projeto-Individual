@@ -16,7 +16,8 @@ a{
 .background{
    height: 230vh;
    width: 100%; 
-   background-color: rgb(201, 12, 12);
+   /* background-image: url(../assets/imgs/background-home.gif); */
+   background-color: rgb(105, 23, 23);
    display: flex;
    background-size: cover;
    flex-direction: column;
@@ -115,11 +116,27 @@ h5{
     width: 49px;
 }
 
+.pagina_atual.vara{
+    width: 42px;
+}
+
+.pagina_atual.linha{
+    width: 49px;
+}
+
+.pagina_atual.carretilha{
+    width: 71px;
+}
+
+.pagina_atual.iscas{
+    width: 41px;
+}
+
 .container{
     height: 200vh;
     width: 100%;
-    margin-top: 220px;
-    display: none;
+    margin-top: 180px;
+    display: flex;
     flex-direction: column;
     align-items: center;
     
@@ -128,6 +145,7 @@ h5{
 .container.anzois{
     display: flex;
 }
+
 
 .container div{
     display: flex;
@@ -159,6 +177,10 @@ h5{
     border-radius: 20px;
 }
 
+.itens:hover{
+    box-shadow: 10px 5px 5px black;
+}
+
 button {
 	color: rgb(255, 255, 255);
 	background-color: black;
@@ -177,22 +199,4 @@ button:hover {
 
 
 
-.container.varas{
-    display: none;
-}
 
-.container.varas{
-    display: none;
-}
-
-.container.linhas{
-    display: none;
-}
-
-.container.carretilhas{
-    display: none;
-}
-
-.container.iscas{
-    display: none;
-}
