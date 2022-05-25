@@ -17,13 +17,19 @@
             </ul>
             <div class="header_info">
                 <a href="home.html">Espécies</a>
-                <a href="Anzois.html">Anzóis</a>
-                <a class="pagina_atual vara">Varas</a>
-                <a href="Linhas.html">Linhas</a>
-                <a href="Carretilhas.html">Carretilhas</a>
-                <a href="Iscas.html">Iscas</a>
+                <a href="">Mais Vendidos</a> 
                 <a href="">Carrinho:<span id="itens_carrinho">0</span></a>   
             </div>
+        </div>
+
+
+
+        <div class="nav_bar">
+            <div><a href="Anzois.html">Anzóis</a></div>
+            <div><a class="pagina_atual" href="Varas.html">Varas</a></div>
+            <div><a href="Linhas.html">Linhas</a></div>
+            <div><a href="Carretilhas.html">Carretilhas</a></div>
+            <div><a href="Iscas.html">Iscas</a></div>
         </div>
 
         <div id="div_varas" class="container varas">
@@ -123,5 +129,12 @@
     }).catch(function (resposta) {
         console.error(resposta);
     });
+
+
+    let selectEl = document.getElementsByTagName('select');
+
+    selectEl[0].addEventListener('change', function() {
+    location.href=this.value;
+});
 }
 </script>

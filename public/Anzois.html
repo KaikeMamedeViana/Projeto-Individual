@@ -17,14 +17,19 @@
             </ul>
             <div class="header_info">
                 <a href="home.html">Espécies</a>
-                <a class="pagina_atual">Anzóis</a>
-                <a href="Varas.html" onclick="pagina_varas()">Varas</a>
-                <a href="Linhas.html">Linhas</a>
-                <a href="Carretilhas.html">Carretilhas</a>
-                <a href="Iscas.html">Iscas</a>
-                <a href="">Carrinho:<span id="itens_carrinho">0</span></a>   
+                <a href="">Mais Vendidos</a>
+                <a href="">Carrinho:0</a>
             </div>
         </div>
+
+        <div class="nav_bar anzois">
+            <div><a class="pagina_atual" href="Anzois.html">Anzóis</a></div>
+            <div><a href="Varas.html">Varas</a></div>
+            <div><a href="Linhas.html">Linhas</a></div>
+            <div><a href="Carretilhas.html">Carretilhas</a></div>
+            <div><a href="Iscas.html">Iscas</a></div>
+        </div>
+        
 
         <div id="div_anzois" class="container anzois">
             <img src="assets/imgs/14.png" alt="">
@@ -68,9 +73,11 @@
         itens_carrinho.innerHTML = `${click}`   
     }
 
-   
+    let selectEl = document.getElementsByTagName('select');
 
-
+    selectEl[0].addEventListener('change', function() {
+    location.href=this.value;
+});
 
     function atualizarAnzois() {
     fetch("/avisos/listarAnzois").then(function (resposta) {

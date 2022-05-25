@@ -11,13 +11,18 @@ a{
     color: white;
 }
 
+
+a:hover{
+    color: #2c78f6;
+}
+
 /*background*/
 
 .background{
-   height: 230vh;
+   height: 250vh;
    width: 100%; 
    /* background-image: url(../assets/imgs/background-home.gif); */
-   background-color: rgb(105, 23, 23);
+   background-color: rgb(255, 0, 0);
    display: flex;
    background-size: cover;
    flex-direction: column;
@@ -34,26 +39,29 @@ a{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-radius: 65px;
     position: absolute;
     top: 0;
     margin-top: 20px;
-    border-bottom: 2px solid;
-    
+    border: 1px solid;
+    border-radius: 65px 65px 0 0;
 }
 
+
 .logo img{
-    width: 200px;
+    width: 300px;
     margin-left: 50px;
 }
 
 .header_info{
-    display: flex;    
+    display: flex; 
+    color: #ffffff;   
 }
 
 .header_info a{
-    margin-right: 100px;
+    margin-right: 144px;
+    margin-top: 10px    ;
 }
+
 
 .footer{
     height: 15vh;
@@ -110,14 +118,14 @@ h5{
 
 .pagina_atual{
     color: rgb(255, 255, 255);
-    border-bottom: 2px rgb(255, 255, 255) solid;
+    border-bottom: 2px #2c78f6 solid;
     border-radius: 5px 5px 5px 5px;
     height: 18px;
     width: 49px;
 }
 
 .pagina_atual.vara{
-    width: 42px;
+    width: 44px;
 }
 
 .pagina_atual.linha{
@@ -135,7 +143,7 @@ h5{
 .container{
     height: 200vh;
     width: 100%;
-    margin-top: 180px;
+    margin-top: 260px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -153,7 +161,7 @@ h5{
 }
 
 .titulo{
-    height: 20vh;
+    height: 20  vh;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -194,6 +202,33 @@ button {
 
 button:hover {
 	background: rgb(0, 0, 0, 0.7)
+}
+
+.nav_bar.anzois{
+    height: 10vh;
+    width: 95%;
+    background-color: rgb(0, 0, 0, 0.3);
+    margin-top: 145px;
+    position: absolute;
+    border: 1px solid black;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    border-radius: 0 0 55px 55px;
+}
+
+.nav_bar{
+    height: 10vh;
+    width: 95%;
+    background-color: rgb(0, 0, 0, 0.3);
+    margin-top: 145px;
+    position: absolute;
+    border: 1px solid black;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    border-radius: 0 0 55px 55px;
+
 }
 
 
