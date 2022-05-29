@@ -1,0 +1,106 @@
+
+
+
+            <div class="imagens">
+                <div>
+                    <img src="assets/imgs-peixes/bagre.png" alt="">
+                    <div>Espécie: Bagre <br>
+                        Peso Médio: 3 kg <br>
+                        Idade Média: 60 anos <br>
+                        Habitat: Represas e rios <br>
+                        Alimentação: Peixes pequenos
+                    </div>
+                </div>
+
+                <div>
+                    <img src="assets/imgs-peixes/tambacu.jpg" alt="">
+                    <div>Espécie: Tambacu <br>
+                        Peso Médio: 30 kg <br>
+                        Idade Média: 11 anos <br>
+                        Habitat: Matas inundadas <br>
+                        Alimentação: Frutas
+                    </div>
+                </div>
+
+                <div>
+                    <img src="" alt="">
+                    <div>Espécie: Carpa <br>
+                         <br>
+                        <br>
+                         <br>
+                       
+                    </div>
+                </div>
+
+                <div>
+                    <img src="assets/imgs-peixes/pacu.png" alt="">
+                    <div>Espécie: Pacu <br>
+                        Peso Médio: 15 kg <br>
+                        Idade Média: 10 anos <br>
+                        Habitat: Rios <br>
+                        Alimentação: Sementes 
+                    </div>
+                </div>
+
+                <div>
+                    <img src="" alt="">
+                    <div>Espécie: Tucunaré <br>
+                        <br>
+                        <br>
+                         <br>
+                        
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="imagens">
+                <div>
+                    <img src="assets/imgs-peixes/matrinxa.jpg" alt="">
+                    <div>Espécie: Matrinxã <br>
+                        Peso Médio: 5 kg <br>
+                        Idade Média: 12 anos <br>
+                        Habitat: Rios Doces <br>
+                        Alimentação: Insetos
+                    </div>
+                </div>
+
+                <div>
+                    <img src="" alt="">
+                    <div>Espécie: Pirarucu <br>
+                         <br>
+                         <br>
+                         <br>
+                       
+                    </div>
+                </div>
+
+                <div>
+                    <img src="" alt="">
+                    <div>Espécie: Traira <br>
+                        <br>
+                         <br>
+                         <br>
+                        
+                    </div>
+                </div>
+
+                <div>
+                    <img src="" alt="">
+                    <div>Espécie: Pirarara <br>
+                         <br>
+                         <br>
+                         <br>
+                        
+                    </div>
+                </div>
+
+                <div>
+                    <img src="" alt="">
+                    <div>Espécie: Piapara <br>
+                         <br>
+                         <br>
+                         <br>
+                        
+                    </div>
+                </div>

@@ -19,7 +19,7 @@ a:hover{
 /*background*/
 
 .background{
-   height: 230vh;
+   height: 280vh;
    width: 100%; 
     background-color: rgb(255, 0, 0);
    display: flex;
@@ -156,7 +156,7 @@ h5{
     
 }
 
-.teste{
+.titulo{
     height: 20vh;
     width: 100% ;
     display: flex;
@@ -178,6 +178,44 @@ h5{
     justify-content: space-evenly;
     align-items: center;
     border-radius: 0 0 25px 25px;
+}
+
+.card_item img{
+    width: 400px;
+    height: 230px;
+    border-radius: 30px;
+    
+}
+
+.card_item{
+    height: 65vh;
+    width: 400px;
+    background-color: #060547;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    color: rgb(255, 255, 255);
+    border-radius: 30px;
+}
+
+.desc{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    flex-direction: column;
+    margin-top: 30px
+}
+
+ul{
+    margin-top: 15px;
+}
+
+.fileira{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 30px;
 }
 
 
