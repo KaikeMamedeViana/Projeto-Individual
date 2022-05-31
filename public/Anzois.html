@@ -58,6 +58,8 @@
         </ul>
     </div>
 
+    <div id="teste"></div>
+
 
 
 </body>
@@ -66,18 +68,15 @@
 
 <script>
 
-        var click = 0
+    var lista_nome = []
+    var lista_preco = []
 
-    function adiconar_carrinho(){
-        click ++
-        itens_carrinho.innerHTML = `${click}`   
+    function adiconar_carrinho(nome, preco){
+        lista_nome.push(nome);
+        lista_preco.push(preco);
     }
 
-    let selectEl = document.getElementsByTagName('select');
-
-    selectEl[0].addEventListener('change', function() {
-    location.href=this.value;
-});
+    
 
     function atualizarAnzois() {
     fetch("/avisos/listarAnzois").then(function (resposta) {
@@ -108,7 +107,7 @@
                         <img src="${publicacao.caminhoFoto}" alt="">
                         <h5>${publicacao.nome}</h5>
                         <h5>R$ ${publicacao.preço}</h5>
-                        <button onclick="adiconar_carrinho()">Adicionar ao Carrinho</button>
+                        <button onclick="adiconar_carrinho('${publicacao.nome}', ${publicacao.preço})">Adicionar ao Carrinho</button>
                     </div>`
 
                     contador++

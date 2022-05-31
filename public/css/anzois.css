@@ -21,8 +21,7 @@ a:hover{
 .background{
    height: 250vh;
    width: 100%; 
-   /* background-image: url(../assets/imgs/background-home.gif); */
-   background-color: rgb(255, 0, 0);
+   background-image: url(../assets/imgs/back-site.png);
    display: flex;
    background-size: cover;
    flex-direction: column;
