@@ -1,0 +1,250 @@
+*{
+    padding: 0;
+    margin: 0;
+    border: 0;
+    list-style-type: none;
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+}
+
+a{
+    color: white;
+}
+
+
+a:hover{
+    color: #2c78f6;
+}
+
+/*background*/
+
+.background{
+   height: 140vh;
+   width: 100%; 
+   background-image: url(../assets/imgs/back-site.png);
+   display: flex;
+   background-size: cover;
+   flex-direction: column;
+   align-items: center;
+}
+
+/*header*/
+
+
+.header{
+    height: 20vh;
+    width: 95%;
+    background-color: rgb(0, 0, 0, 0.3);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    margin-top: 20px;
+    border: 1px solid;
+    border-radius: 65px 65px 0 0;
+}
+
+
+.logo img{
+    width: 300px;
+    margin-left: 50px;
+}
+
+.header_info{
+    display: flex; 
+    color: #ffffff;   
+}
+
+.header_info a{
+    margin-right: 144px;
+    margin-top: 10px    ;
+}
+
+
+.footer{
+    height: 15vh;
+    width: 100;
+    background-color: black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    
+}
+
+
+
+.footer_info{
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.footer_info li{
+    margin-right: 40px;
+}
+
+
+.info {
+    display: flex;
+    align-items: center;
+}
+
+.info img{
+    width: 40px;
+}
+
+.info li{
+    margin-left: 40px;
+}
+
+h5{
+    margin-left: 5px;
+}
+
+.suporte img{
+    width: 50px;
+}
+
+
+.redes{
+    display: flex;
+    margin: 10px 0 0 35px;
+}
+
+.pagina_atual{
+    color: rgb(255, 255, 255);
+    border-bottom: 2px #2c78f6 solid;
+    border-radius: 5px 5px 5px 5px;
+    height: 18px;
+    width: 49px;
+}
+
+.pagina_atual.vara{
+    width: 44px;
+}
+
+.pagina_atual.linha{
+    width: 49px;
+}
+
+.pagina_atual.carretilha{
+    width: 71px;
+}
+
+.pagina_atual.iscas{
+    width: 41px;
+}
+
+
+button {
+	color: rgb(255, 255, 255);
+	background-color: black;
+	height: 40px;
+	width: 200px;
+	border-radius: 20px 20px 20px 20px;
+	border: #ffffff 2px solid;
+	cursor: pointer;
+	transition: 1s ease;
+}
+
+button:hover {
+	background: rgb(0, 0, 0, 0.7)
+}
+
+.nav_bar.anzois{
+    height: 10vh;
+    width: 95%;
+    background-color: rgb(0, 0, 0, 0.3);
+    margin-top: 145px;
+    position: absolute;
+    border: 1px solid black;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    border-radius: 0 0 55px 55px;
+}
+
+.nav_bar{
+    height: 10vh;
+    width: 95%;
+    background-color: rgb(0, 0, 0, 0.3);
+    margin-top: 145px;
+    position: absolute;
+    border: 1px solid black;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    border-radius: 0 0 55px 55px;
+
+}
+
+.card_carrinho{
+    height: 70vh;
+    width: 90%;
+    margin-top: 280px;
+    border-radius: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card_desc{
+    height: 70vh;
+    width: 40%;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    border: 1px black solid;
+
+}
+.card_valor{
+    height: 70vh;
+    width: 30%;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    border: 1px black solid;
+
+}
+
+.card_id{
+    height: 70vh;
+    width: 10%;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    border: 1px black solid;
+
+}
+.total{
+    height: 15vh;
+    width: 72.3%;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    border: 1px black solid;
+
+}
+
+.total h3{
+    margin-left: 150px;
+}
+
+.total h4{
+    margin-right: 200px;
+}
+
+
+
+
