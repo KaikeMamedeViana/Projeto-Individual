@@ -18,7 +18,7 @@
             <div class="header_info">
                 <a href="home.html">Espécies</a>
                 <a href="">Mais Vendidos</a>
-                <a href="">Carrinho:0</a>
+                <a href="carrinho.html">Carrinho:<span id="teste">0<span></a>
             </div>
         </div>
 
@@ -29,7 +29,7 @@
             <div><a href="Carretilhas.html">Carretilhas</a></div>
             <div><a href="Iscas.html">Iscas</a></div>
         </div>
-        
+
 
         <div id="div_anzois" class="container anzois">
             <img src="assets/imgs/14.png" alt="">
@@ -58,7 +58,7 @@
         </ul>
     </div>
 
-    <div id="teste"></div>
+    
 
 
 
@@ -68,41 +68,64 @@
 
 <script>
 
-    var lista_nome = []
-    var lista_preco = []
+    var carrinho = []
+    var click = 0
 
-    function adiconar_carrinho(nome, preco){
-        lista_nome.push(nome);
-        lista_preco.push(preco);
+
+    function adiconar_carrinho(nome, preco) {
+
+
+        var produto = { nome: "", preco: "" }
+        // produto.lista_nome.push(nome);
+        // produto.lista_preco.push(preco);
+        produto.nome = nome
+        produto.preco = preco
+
+
+        var compraAnzois = JSON.parse(localStorage.getItem("carrinho"))
+        if (compraAnzois != null) {
+            compraAnzois.push(produto)
+        } else {
+            compraAnzois = [produto]
+        }
+
+        localStorage.setItem('carrinho', JSON.stringify(compraAnzois))
+
+        
+
+        
     }
 
-    
+
+
+
+
 
     function atualizarAnzois() {
-    fetch("/avisos/listarAnzois").then(function (resposta) {
-        if (resposta.ok) {
+        fetch("/avisos/listarAnzois").then(function (resposta) {
+            if (resposta.ok) {
 
-            resposta.json().then(function (resposta) {
-                console.log("Dados recebidos: ", JSON.stringify(resposta));
-                var feed = document.getElementById("div_anzois");
-                var contador = 0
-                var fileira = 0
-                for (let i = 0; i < resposta.length; i++) {
-                    var publicacao = resposta[i];
-                    
-                    if(contador == 4){
-                        contador = 0
-                        fileira++
-                    }
+                resposta.json().then(function (resposta) {
+                    console.log("Dados recebidos: ", JSON.stringify(resposta));
+                    var feed = document.getElementById("div_anzois");
+                    var contador = 0
+                    var fileira = 0
+                    for (let i = 0; i < resposta.length; i++) {
+                        var publicacao = resposta[i];
+
+                        if (contador == 4) {
+                            contador = 0
+                            fileira++
+                        }
 
 
-                    if(contador == 0){
-                        feed.innerHTML += `<div id= "linha_${fileira}"></div>`
-                    }
+                        if (contador == 0) {
+                            feed.innerHTML += `<div id= "linha_${fileira}"></div>`
+                        }
 
-                    // criando e manipulando elementos do HTML via JavaScript
-                    var linha = document.getElementById(`linha_${fileira}`);
-                    linha.innerHTML += `
+                        // criando e manipulando elementos do HTML via JavaScript
+                        var linha = document.getElementById(`linha_${fileira}`);
+                        linha.innerHTML += `
                     <div class="itens">
                         <img src="${publicacao.caminhoFoto}" alt="">
                         <h5>${publicacao.nome}</h5>
@@ -110,16 +133,16 @@
                         <button onclick="adiconar_carrinho('${publicacao.nome}', ${publicacao.preço})">Adicionar ao Carrinho</button>
                     </div>`
 
-                    contador++
-                    
-                }
+                        contador++
 
-            });
-        } else {
-            throw ('Houve um erro na API!');
-        }
-    }).catch(function (resposta) {
-        console.error(resposta);
-    });
-}
+                    }
+
+                });
+            } else {
+                throw ('Houve um erro na API!');
+            }
+        }).catch(function (resposta) {
+            console.error(resposta);
+        });
+    }
 </script>

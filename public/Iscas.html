@@ -18,7 +18,7 @@
             <div class="header_info">
                 <a href="home.html">Espécies</a>
                 <a href="">Mais Vendidos</a>
-                <a href="">Carrinho:<span id="itens_carrinho">0</span></a>   
+                <a href="carrinho.html">Carrinho:<span id="itens_carrinho">0</span></a>   
             </div>
         </div>
 
@@ -70,12 +70,32 @@
 
 <script>
 
-    var lista_nome = []
-    var lista_preco = []
+    var carrinho = []
+    var click = 0
 
-    function adiconar_carrinho(nome, preco){
-        lista_nome.push(nome);
-        lista_preco.push(preco);
+    function adiconar_carrinho(nome, preco) {
+
+
+        var produto = { nome: "", preco: "" }
+        // produto.lista_nome.push(nome);
+        // produto.lista_preco.push(preco);
+        produto.nome = nome
+        produto.preco = preco
+
+
+        var compraAnzois = JSON.parse(localStorage.getItem("carrinho"))
+        if (compraAnzois != null) {
+            compraAnzois.push(produto)
+        } else {
+            compraAnzois = [produto]
+        }
+
+        localStorage.setItem('carrinho', JSON.stringify(compraAnzois))
+
+        
+
+        
+
     }
 
     
@@ -125,11 +145,7 @@
     });
 
 
-    let selectEl = document.getElementsByTagName('select');
-
-    selectEl[0].addEventListener('change', function() {
-    location.href=this.value;
-});
+    
 }
 
 

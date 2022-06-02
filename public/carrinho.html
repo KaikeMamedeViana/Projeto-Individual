@@ -7,7 +7,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="css/carrinho.css">
 </head>
-<body>
+<body onload="ver_carrinho()">
     <div class="background">
         <div class="header">
             <ul class="logo">
@@ -16,7 +16,7 @@
             <div class="header_info">
                 <a href="home.html">Espécies</a>
                 <a href="">Mais Vendidos</a>
-                <a href="">Carrinho:<span id="itens_carrinho">0</span></a>   
+                <a onclick="ver_carrinho()" href="">Carrinho:<span id="itens_carrinho">0</span></a>   
             </div>
         </div>
         <div class="nav_bar">
@@ -29,57 +29,35 @@
 
 
 
-        <div >
+        <div id="teste">
 
         </div>
         <div class="card_carrinho">
             <div class="card_id">
                 <h4>ITEM ID</h4>
-                <h4>ID 1 <br>
-                    ID 2 <br>
-                    ID 3 <br>
-                    ID 4 <br>
-                    ID 5 <br>
-                    ID 6 <br>
-                    ID 7 <br>
-                    ID 8 <br>
-                    ID 9 <br>
-                    ID 10 <br>
-                </h4>
+                
+                <div id="id_item">
+
+                </div>
+
             </div>
             <div class="card_desc">
                 <h4>DESCRIÇÃO</h4>
-                <h4>desc 1 <br>
-                    desc 1 <br>
-                    desc 1 <br>
-                    desc 1 <br>
-                    desc 1 <br>
-                    desc 1 <br>
-                    desc 1 <br>
-                    desc 1 <br>
-                    desc 1 <br>
-                    desc 1 <br>
-                </h4>
+                <div id="descricao"></div>
             </div>
             <div class="card_valor">
                 <h4>VALOR(R$)</h4>
-                <h4>VALOR 1 <br>
-                    VALOR 1 <br>
-                    VALOR 1 <br>
-                    VALOR 1 <br>
-                    VALOR 1 <br>
-                    VALOR 1 <br>
-                    VALOR 1 <br>
-                    VALOR 1 <br>
-                    VALOR 1 <br>
-                    VALOR 1 <br>
-                </h4>
+                <div id="valor"></div>
             </div>
         </div>
         <div class="total">
-            <h4>TOTAL</h4>
-            <h3>VALOR 1</h4>
+            <button>FINALIZAR COMPRA</button>
+            <div class="valor_final">
+              
+                TOTAL: R$<H4 id="total_compra">TOTAL</H4>
+            </div>
         </div>
+        
     </div>  
 
 
@@ -105,5 +83,102 @@
         </ul>
 
     </div>
+
 </body>
 </html>
+
+<script>
+
+    var carrinho = []
+    var click = 0
+    var teste;
+
+
+    function ver_carrinho(nome, preco) {
+        var produto = { nome: "", preco: "" }
+        // produto.lista_nome.push(nome);
+        // produto.lista_preco.push(preco);
+        produto.nome = nome
+        produto.preco = preco
+        var total = 0
+
+        var compraAnzois = JSON.parse(localStorage.getItem("carrinho"))
+        if (compraAnzois != null) {
+            compraAnzois.push(produto)
+        } else {
+            compraAnzois = [produto]
+        }
+
+
+
+        teste = JSON.parse(localStorage.carrinho) 
+        
+
+        for(var contador = 0; contador < teste.length; contador++){
+            
+            var nome = JSON.stringify(teste[contador].nome)
+            var preco = JSON.stringify(teste[contador].preco)
+            nome = nome.replaceAll('"', '')
+            
+            descricao.innerHTML += `${nome}<br>`
+            valor.innerHTML += `R$${preco}<br>`
+            id_item.innerHTML += `ID ${contador + 1}<br>`
+
+            total +=  teste[contador].preco
+            total_compra.innerHTML = `${total}`
+        }
+
+        
+         itens_carrinho.innerHTML = teste.length
+
+        
+
+    }
+
+
+
+    function atualizarAnzois() {
+        fetch("/avisos/listarAnzois").then(function (resposta) {
+            if (resposta.ok) {
+
+                resposta.json().then(function (resposta) {
+                    console.log("Dados recebidos: ", JSON.stringify(resposta));
+                    var feed = document.getElementById("div_anzois");
+                    var contador = 0
+                    var fileira = 0
+                    for (let i = 0; i < resposta.length; i++) {
+                        var publicacao = resposta[i];
+
+                        if (contador == 4) {
+                            contador = 0
+                            fileira++
+                        }
+
+
+                        if (contador == 0) {
+                            feed.innerHTML += `<div id= "linha_${fileira}"></div>`
+                        }
+
+                        // criando e manipulando elementos do HTML via JavaScript
+                        var linha = document.getElementById(`linha_${fileira}`);
+                        linha.innerHTML += `
+                    <div class="itens">
+                        <img src="${publicacao.caminhoFoto}" alt="">
+                        <h5>${publicacao.nome}</h5>
+                        <h5>R$ ${publicacao.preço}</h5>
+                        <button onclick="adiconar_carrinho('${publicacao.nome}', ${publicacao.preço})">Adicionar ao Carrinho</button>
+                    </div>`
+
+                        contador++
+
+                    }
+
+                });
+            } else {
+                throw ('Houve um erro na API!');
+            }
+        }).catch(function (resposta) {
+            console.error(resposta);
+        });
+    }
+</script>

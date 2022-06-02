@@ -190,51 +190,58 @@ button:hover {
     display: flex;
     justify-content: center;
     align-items: center;
+    color: white;
+
 }
 
 .card_desc{
     height: 70vh;
-    width: 40%;
-    background-color: rgb(255, 255, 255);
+    width: 60%;
+    background-color: rgb(0, 0, 0, 0.3);
     display: flex;
     justify-content: space-evenly;
     align-items: center;
     flex-direction: column;
-    border: 1px black solid;
+    
+    overflow: auto;
 
 }
 .card_valor{
     height: 70vh;
     width: 30%;
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(0, 0, 0, 0.3);
     display: flex;
     justify-content: space-evenly;
     align-items: center;
     flex-direction: column;
-    border: 1px black solid;
+    border-radius: 0 40px 0 0;
+    overflow: auto;
+
 
 }
 
 .card_id{
     height: 70vh;
     width: 10%;
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(0, 0, 0, 0.3);
     display: flex;
     justify-content: space-evenly;
     align-items: center;
     flex-direction: column;
-    border: 1px black solid;
+    border-radius: 40px 0 0 0;
+    overflow: auto;
+
 
 }
 .total{
     height: 15vh;
-    width: 72.3%;
-    background-color: rgb(255, 255, 255);
+    width: 89.9%;
+    background-color: rgb(0, 0, 0, 0.3);
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
-    border: 1px black solid;
-
+    color: white;
+    border-radius: 0 0 40px 40px;
 }
 
 .total h3{
@@ -242,8 +249,37 @@ button:hover {
 }
 
 .total h4{
-    margin-right: 200px;
+    margin-right: 150px;
 }
+
+
+
+.teste{
+    height: 80vh;
+    width: 100%;
+    background-color: #ffffff;
+}
+
+.valor_final{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 150px;
+}
+
+.valor_final h4{
+    margin-left: 5px;
+}
+
+
+button{
+    margin-left: 80px;
+}
+
+
+
+
+
 
 
 
