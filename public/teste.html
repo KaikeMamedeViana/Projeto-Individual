@@ -3,27 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="css/teste.css">
 </head>
 <body>
-    <table>
-        <tr>
-            <td>ID</td>
-            <td>DESC</td>
-            <td>VALOR</td>
-        </tr>
-        <tr>
-            <td>1</td>
-            <td>recebaaaaaaaaaaaaa</td>
-            <td>10000000</td>
-        </tr>
-    </table>
+                
+               
 </body>
 </html>
 
-<style>
-    table td{
-        border: 1px black solid;
+
+
+<script>
+    function metedo(){
+        var credito = document.querySelector('.info_cartao')
+        var pix = document.querySelector('.pix')
+        var boleto = document.querySelector('.boleto')
+
+        if(slc_metodo.value == "credito" || slc_metodo.value == "debito"){
+
+            credito.style.display = "flex"
+            pix.style.display = "none"
+
+
+        } else if(slc_metodo.value == "pix"){
+
+            credito.style.display = "none"
+            pix.style.display = "flex"
+
+        } else{
+            credito.style.display = "none"
+            pix.style.display = "none"
+            boleto.style.display = "flex"
+
+        }
+
+
+
     }
-</style>
+</script>
+

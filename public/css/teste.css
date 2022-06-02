@@ -1,0 +1,66 @@
+.card_pagamento{
+    height: 70vh;
+    width: 45%;
+    background-color: rgb(0, 0, 0, 0.3);
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.card_pagamento  ul{
+    list-style-type: none;
+}
+
+select{
+    width: 90%;
+    margin-right: 15px;
+}
+
+.container{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+
+.metodo_pagamento{
+    display: flex;
+    justify-content: center;
+    height: 5%;
+    
+}
+
+.info_cartao{
+    display: none;
+    flex-direction: column;
+    
+}
+
+.credito_debito{
+    margin-bottom: 105px;
+}
+
+.pix{
+    display: none;
+    flex-direction: column;
+}
+
+.pix img{
+    width: 150px;
+}
+
+.teste button{
+    margin-top: 10px;
+
+}
+.boleto{
+    display: none;
+}
+
+.boleto h4{
+    margin-top: 10px;
+}

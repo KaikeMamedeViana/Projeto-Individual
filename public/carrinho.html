@@ -29,9 +29,6 @@
 
 
 
-        <div id="teste">
-
-        </div>
         <div class="card_carrinho">
             <div class="card_id">
                 <h4>ITEM ID</h4>
@@ -51,10 +48,72 @@
             </div>
         </div>
         <div class="total">
-            <button>FINALIZAR COMPRA</button>
-            <div class="valor_final">
-              
-                TOTAL: R$<H4 id="total_compra">TOTAL</H4>
+            <button onclick="finalizar()">FINALIZAR COMPRA</button>
+                <div class="valor_final">
+                
+                    TOTAL: R$<H4 id="total_compra">TOTAL</H4>
+                </div>
+        </div>
+        <div class="card_pagamento">
+            <ul>
+                RUA: <li><input id="inp_rua" type="text"></li>
+                ESTADO: <li><input id="inp_estado" type="text"></li>
+                CIDADE: <li><input id="inp_cidade" type="text"></li>
+                CEP: <li><input id="inp_cep" type="text"></li>
+                METODO DE PAGAMENTO: 
+                <li class="metodo_pagamento">     
+                    <select name="" id="slc_metodo">
+                        <option value="Metodo">Método</option>
+                        <option onclick="credito()" value="credito">Cartão de Crédito</option>
+                        <option onclick="pix()" value="pix">PIX</option>
+                        <option onclick="boleto()" value="boleto">Boleto</option>
+                    </select>
+                </li>
+                <li> <button  onclick="metedo()">Selecionar</button></li>
+                <li>
+                    <button onclick="voltar_carrinho()">Voltar ao Carrinho</button>
+                </li>
+            </ul>
+            
+           
+            <div class="credito_debito">
+                <ul class="info_cartao">
+                    NUMERO DO CARTÃO<input id="inp_numero_cartao" type="text">
+                    VALIDADE DO CARTÃO<input id="inp_validade" type="text">
+                    CÓDIGO DE SEGURANÇA<input id="inp_codigo" type="text">
+                    NOME DO CARTÃO<input id="inp_nome_cartao" type="text"
+                </ul>
+                <ul>
+                    <li class="btn cartao"><button onclick="pagamento_cartao()">Realizar Pagamento</button></li>
+                </ul>
+            </div>
+            <div class="pix">
+                <ul>
+                    <li>Conta: 0000</li>
+                    <li>Agencia: 0000</li>
+                    <li>Banco: BRADESCO</li>
+                    <li>Chave CNPJ: 000.000.000-00</li>
+                </ul>
+                <ul>
+                    <li><img src="assets/imgs/qrcode.png" alt=""></li>
+                </ul>
+                <ul>
+                    <li class="btn cartao"><button onclick="pagamento_pix()">Realizar Pagamento</button></li>
+                </ul>
+            </div> 
+            
+            <div class="boleto">
+                <ul>
+                    <h4>NUMERO PARA PAGAMENTO:</h4>
+                    <li>104- 10491.16070 99000.100018 </li>
+
+                    <h4>IMPRIMIR BOLETO:</h4> 
+                    <li><a href="assets/imgs/boleto.pdf">BOLETO PDF</a></li>
+
+                    <li class="btn cartao"><button onclick="pagamento_boleto()">Realizar Pagamento</button></li>
+
+                
+                </ul>
             </div>
         </div>
         
@@ -125,7 +184,7 @@
             id_item.innerHTML += `ID ${contador + 1}<br>`
 
             total +=  teste[contador].preco
-            total_compra.innerHTML = `${total}`
+            total_compra.innerHTML = `${total.toFixed(2)}`
         }
 
         
@@ -135,7 +194,69 @@
 
     }
 
+    function finalizar(){
 
+        var id = document.querySelector('.card_id');
+        var desc = document.querySelector('.card_desc');
+        var valor = document.querySelector('.card_valor');
+        var total = document.querySelector('.total');
+        var pagamento = document.querySelector('.card_pagamento');
+        var div_carrinho = document.querySelector('.card_carrinho');
+
+        id.style.display = "none"
+        desc.style.display = "none"
+        valor.style.display = "none"
+        total.style.display = "none"
+        div_carrinho.style.display = "none"
+        pagamento.style.display = "flex"
+
+       
+    }
+
+    function voltar_carrinho(){
+        var id = document.querySelector('.card_id');
+        var desc = document.querySelector('.card_desc');
+        var valor = document.querySelector('.card_valor');
+        var total = document.querySelector('.total');
+        var pagamento = document.querySelector('.card_pagamento');
+        var div_carrinho = document.querySelector('.card_carrinho');
+
+        id.style.display = "flex"
+        desc.style.display = "flex"
+        valor.style.display = "flex"
+        total.style.display = "flex"
+        div_carrinho.style.display = "flex"
+        pagamento.style.display = "none"
+    }
+
+    function metedo(){
+        var credito = document.querySelector('.info_cartao')
+        var pix = document.querySelector('.pix')
+        var boleto = document.querySelector('.boleto')
+
+        if(slc_metodo.value == "credito" || slc_metodo.value == "debito"){
+
+            credito.style.display = "flex"
+            pix.style.display = "none"
+            boleto.style.display = "none"
+
+
+
+        } else if(slc_metodo.value == "pix"){
+
+            credito.style.display = "none"
+            pix.style.display = "flex"
+            boleto.style.display = "none"
+
+
+        } else{
+            credito.style.display = "none"
+            pix.style.display = "none"
+            boleto.style.display = "flex"
+
+        }
+
+    }
 
     function atualizarAnzois() {
         fetch("/avisos/listarAnzois").then(function (resposta) {
@@ -181,4 +302,64 @@
             console.error(resposta);
         });
     }
+
+    function pagamento_cartao(){
+        var ruaVar = (inp_rua.value)
+        var estadoVar = (inp_estado.value)
+        var cidadeVar = (inp_cidade.value)
+        var cepVar = (inp_cep.value)
+        var metodoVar = (slc_metodo.value)
+        var validadeVar = (inp_validade.value)
+        var codigoVar = (inp_codigo.value)
+        var nomeVar = (inp_nome_cartao.value)
+        var numeroVar = (inp_numero_cartao.value)
+
+        if(ruaVar == "" || estadoVar == "" || cidadeVar == "" || cepVar == "" ||   validadeVar == "" || codigoVar == "" || nomeVar == "" || numeroVar == ""){
+            alert("Preencha todos os campos para prosseguir !!")
+        } else if (cepVar.length < 9 || cepVar.length >9){
+            alert("CEP inválido!!")
+        } else if(numeroVar.length < 16 || numeroVar.length > 16){
+            alert("Numero do cartão inválido!!")
+        } else if (codigoVar.length < 3 || codigoVar.length > 3){
+            alert("Código de segurança inválido")
+        } else if (nomeVar.length < 3 || nomeVar.length > 3){
+            alert("Nome do cartão inválido")
+        } else {
+
+            fetch("/usuarios/cadastrar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                ruaServer: ruaVar,
+                estadoServer: estadoVar,
+                cidadeServer: cidadeVar,
+                cepServer: cepVar,
+                metodoServer: metodoVar,
+                validadeServer: validadeVar
+                codigoServer: codigoVar
+                metodoServer: metodoVar
+            })
+        }).then(function (resposta) {
+
+            console.log("resposta: ", resposta);
+
+            if (resposta.ok) {
+                limparFormulario();
+                finalizarAguardar();
+            } else {
+                throw ("Houve um erro ao tentar realizar o cadastro!");
+            }
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+        });
+
+        return false;
+    }
+
+        
+    }
+
+
 </script>
