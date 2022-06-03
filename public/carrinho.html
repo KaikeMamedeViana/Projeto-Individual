@@ -149,16 +149,16 @@
 <script>
 
     var carrinho = []
-    var click = 0
     var teste;
 
 
-    function ver_carrinho(nome, preco) {
-        var produto = { nome: "", preco: "" }
+    function ver_carrinho(nome, preco, idItem) {
+        var produto = { nome: "", preco: "", idItem: ""}
         // produto.lista_nome.push(nome);
         // produto.lista_preco.push(preco);
         produto.nome = nome
         produto.preco = preco
+        produto.idItem = idItem
         var total = 0
 
         var compraAnzois = JSON.parse(localStorage.getItem("carrinho"))
@@ -177,11 +177,12 @@
             
             var nome = JSON.stringify(teste[contador].nome)
             var preco = JSON.stringify(teste[contador].preco)
+            var idItem = JSON.stringify(teste[contador].idItem)
             nome = nome.replaceAll('"', '')
             
             descricao.innerHTML += `${nome}<br>`
             valor.innerHTML += `R$${preco}<br>`
-            id_item.innerHTML += `ID ${contador + 1}<br>`
+            id_item.innerHTML += `ID ${idItem}<br>`
 
             total +=  teste[contador].preco
             total_compra.innerHTML = `${total.toFixed(2)}`
@@ -287,7 +288,7 @@
                         <img src="${publicacao.caminhoFoto}" alt="">
                         <h5>${publicacao.nome}</h5>
                         <h5>R$ ${publicacao.preço}</h5>
-                        <button onclick="adiconar_carrinho('${publicacao.nome}', ${publicacao.preço})">Adicionar ao Carrinho</button>
+                        <button onclick="adiconar_carrinho('${publicacao.nome}', ${publicacao.preço},  ${publicacao.idItem})">Adicionar ao Carrinho</button>
                     </div>`
 
                         contador++
@@ -322,11 +323,11 @@
             alert("Numero do cartão inválido!!")
         } else if (codigoVar.length < 3 || codigoVar.length > 3){
             alert("Código de segurança inválido")
-        } else if (nomeVar.length < 3 || nomeVar.length > 3){
+        } else if (nomeVar.length < 3){
             alert("Nome do cartão inválido")
         } else {
 
-            fetch("/usuarios/cadastrar", {
+            fetch("/usuarios/cadastrar_pagamento", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -337,9 +338,10 @@
                 cidadeServer: cidadeVar,
                 cepServer: cepVar,
                 metodoServer: metodoVar,
-                validadeServer: validadeVar
-                codigoServer: codigoVar
-                metodoServer: metodoVar
+                validadeServer: validadeVar,
+                codigoServer: codigoVar,
+                nomeServer: nomeVar,
+                numeroServer: numeroVar
             })
         }).then(function (resposta) {
 
@@ -361,5 +363,81 @@
         
     }
 
+        function pagamento_pix(){
+        var ruaVar = (inp_rua.value)
+        var estadoVar = (inp_estado.value)
+        var cidadeVar = (inp_cidade.value)
+        var cepVar = (inp_cep.value)
+        var metodoVar = (slc_metodo.value)
+
+        fetch("/usuarios/cadastrar_pagamento_pix", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                ruaServer: ruaVar,
+                estadoServer: estadoVar,
+                cidadeServer: cidadeVar,
+                cepServer: cepVar,
+                metodoServer: metodoVar
+            })
+        }).then(function (resposta) {
+
+            console.log("resposta: ", resposta);
+
+            if (resposta.ok) {
+                limparFormulario();
+                finalizarAguardar();
+            } else {
+                throw ("Houve um erro ao tentar realizar o cadastro!");
+            }
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+        });
+
+        return false;
+    }
+
+
+
+
+    function pagamento_boleto(){
+        var ruaVar = (inp_rua.value)
+        var estadoVar = (inp_estado.value)
+        var cidadeVar = (inp_cidade.value)
+        var cepVar = (inp_cep.value)
+        var metodoVar = (slc_metodo.value)
+
+        fetch("/usuarios/cadastrar_pagamento_boleto", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                ruaServer: ruaVar,
+                estadoServer: estadoVar,
+                cidadeServer: cidadeVar,
+                cepServer: cepVar,
+                metodoServer: metodoVar
+            })
+        }).then(function (resposta) {
+
+            console.log("resposta: ", resposta);
+
+            if (resposta.ok) {
+                limparFormulario();
+                finalizarAguardar();
+            } else {
+                throw ("Houve um erro ao tentar realizar o cadastro!");
+            }
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+        });
+
+        return false;
+    }
+
+    
 
 </script>

@@ -97,11 +97,148 @@ function cadastrar(req, res) {
     }
 }
 
+function cadastrar_pagamento(req, res) {
+    var rua = req.body.ruaServer;
+    var estado = req.body.estadoServer;
+    var cidade = req.body.cidadeServer;
+    var cep = req.body.cepServer;
+    var metodo = req.body.metodoServer;
+    var validade = req.body.validadeServer;
+    var codigo = req.body.codigoServer;
+    var nome = req.body.nomeServer;
+    var numero = req.body.numeroServer;
+
+    
+
+    if (rua == undefined) {
+        res.status(400).send("Sua rua está undefined!");
+    } else if (estado == undefined) {
+        res.status(400).send("Seu estado está undefined!");
+    } else if (cidade == undefined) {
+        res.status(400).send("Sua cidade está undefined!");
+    } else if (cep == undefined) {
+        res.status(400).send("Seu cep está undefined!");
+    } else if (metodo == undefined) {
+        res.status(400).send("Seu metodo está undefined!");
+    }else if (validade == undefined) {
+        res.status(400).send("Sua validade está undefined!");
+    } else if (codigo == undefined) {
+        res.status(400).send("Seu codigo está undefined!");
+    } else if (nome == undefined) {
+        res.status(400).send("Seu nome está undefined!");
+    } else if (numero == undefined) {
+        res.status(400).send("Seu numero está undefined!");
+    }
+     else {
+        
+        usuarioModel.cadastrar_pagamento(rua, estado, cidade, cep, metodo, validade, codigo, nome, numero)
+            .then(
+                function (resultado) {
+                    res.json(resultado);
+                }
+            ).catch(
+                function (erro) {
+                    console.log(erro);
+                    console.log(
+                        "\nHouve um erro ao realizar o cadastro! Erro: ",
+                        erro.sqlMessage
+                    );
+                    res.status(500).json(erro.sqlMessage);
+                }
+            );
+    }
+}
+
+function cadastrar_pagamento_pix(req, res) {
+    var rua = req.body.ruaServer;
+    var estado = req.body.estadoServer;
+    var cidade = req.body.cidadeServer;
+    var cep = req.body.cepServer;
+    var metodo = req.body.metodoServer;
+
+    
+
+    if (rua == undefined) {
+        res.status(400).send("Sua rua está undefined!");
+    } else if (estado == undefined) {
+        res.status(400).send("Seu estado está undefined!");
+    } else if (cidade == undefined) {
+        res.status(400).send("Sua cidade está undefined!");
+    } else if (cep == undefined) {
+        res.status(400).send("Seu cep está undefined!");
+    } else if (metodo == undefined) {
+        res.status(400).send("Seu metodo está undefined!");
+    } else {
+        
+        usuarioModel.cadastrar_pagamento_pix(rua, estado, cidade, cep, metodo)
+            .then(
+                function (resultado) {
+                    res.json(resultado);
+                }
+            ).catch(
+                function (erro) {
+                    console.log(erro);
+                    console.log(
+                        "\nHouve um erro ao realizar o cadastro! Erro: ",
+                        erro.sqlMessage
+                    );
+                    res.status(500).json(erro.sqlMessage);
+                }
+            );
+    }
+}
+
+function cadastrar_pagamento_boleto(req, res) {
+    var rua = req.body.ruaServer;
+    var estado = req.body.estadoServer;
+    var cidade = req.body.cidadeServer;
+    var cep = req.body.cepServer;
+    var metodo = req.body.metodoServer;
+
+    
+
+    if (rua == undefined) {
+        res.status(400).send("Sua rua está undefined!");
+    } else if (estado == undefined) {
+        res.status(400).send("Seu estado está undefined!");
+    } else if (cidade == undefined) {
+        res.status(400).send("Sua cidade está undefined!");
+    } else if (cep == undefined) {
+        res.status(400).send("Seu cep está undefined!");
+    } else if (metodo == undefined) {
+        res.status(400).send("Seu metodo está undefined!");
+    } else {
+        
+        usuarioModel.cadastrar_pagamento_boleto(rua, estado, cidade, cep, metodo)
+            .then(
+                function (resultado) {
+                    res.json(resultado);
+                }
+            ).catch(
+                function (erro) {
+                    console.log(erro);
+                    console.log(
+                        "\nHouve um erro ao realizar o cadastro! Erro: ",
+                        erro.sqlMessage
+                    );
+                    res.status(500).json(erro.sqlMessage);
+                }
+            );
+    }
+}
+
+
+
+
+
 
 
 module.exports = {
     entrar,
     cadastrar,
     listar,
-    testar
+    testar,
+    cadastrar_pagamento,
+    cadastrar_pagamento_pix,
+    cadastrar_pagamento_boleto
 }

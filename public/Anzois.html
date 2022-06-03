@@ -72,14 +72,15 @@
     var click = 0
 
 
-    function adiconar_carrinho(nome, preco) {
+    function adiconar_carrinho(nome, preco, idItem) {
 
 
-        var produto = { nome: "", preco: "" }
+        var produto = { nome: "", preco: "", idItem: "" }
         // produto.lista_nome.push(nome);
         // produto.lista_preco.push(preco);
         produto.nome = nome
         produto.preco = preco
+        produto.idItem = idItem
 
 
         var compraAnzois = JSON.parse(localStorage.getItem("carrinho"))
@@ -130,7 +131,7 @@
                         <img src="${publicacao.caminhoFoto}" alt="">
                         <h5>${publicacao.nome}</h5>
                         <h5>R$ ${publicacao.preço}</h5>
-                        <button onclick="adiconar_carrinho('${publicacao.nome}', ${publicacao.preço})">Adicionar ao Carrinho</button>
+                        <button onclick="adiconar_carrinho('${publicacao.nome}', ${publicacao.preço}, ${publicacao.idItem})">Adicionar ao Carrinho</button>
                     </div>`
 
                         contador++

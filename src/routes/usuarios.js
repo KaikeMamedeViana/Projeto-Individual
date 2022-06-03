@@ -15,6 +15,19 @@ router.post("/cadastrar", function (req, res) {
     usuarioController.cadastrar(req, res);
 })
 
+router.post("/cadastrar_pagamento", function (req, res) {
+    usuarioController.cadastrar_pagamento(req, res);
+})
+
+router.post("/cadastrar_pagamento_pix", function (req, res) {
+    usuarioController.cadastrar_pagamento_pix(req, res);
+})
+
+router.post("/cadastrar_pagamento_boleto", function (req, res) {
+    usuarioController.cadastrar_pagamento_boleto(req, res);
+})
+
+
 router.post("/autenticar", function (req, res) {
     usuarioController.entrar(req, res);
 });
