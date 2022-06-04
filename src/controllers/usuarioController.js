@@ -235,6 +235,39 @@ function cadastrar_pagamento_boleto(req, res) {
 
 
 
+function cadastrar_itens_compra(req, res) {
+    var id_comprado = req.body.id_item_compradoServer;
+    var item_desc = req.body.nomeItemServer;
+    var item_valor = req.body.precoItemServer;
+
+    if (item_desc == undefined) {
+        res.status(400).send("Sua item está undefined!");
+    } else if (item_valor == undefined) {
+        res.status(400).send("Seu preco está undefined!");
+    } else if (id_comprado == undefined) {
+        res.status(400).send("Sua id_comprado está undefined!");
+    }  else {
+        
+        usuarioModel.cadastrar_itens_compra(item_desc, item_valor, id_comprado)
+            .then(
+                function (resultado) {
+                    res.json(resultado);
+                }
+            ).catch(
+                function (erro) {
+                    console.log(erro);
+                    console.log(
+                        "\nHouve um erro ao realizar o cadastro! Erro: ",
+                        erro.sqlMessage
+                    );
+                    res.status(500).json(erro.sqlMessage);
+                }
+            );
+    }
+}
+
+
+
 
 
 
@@ -249,5 +282,6 @@ module.exports = {
     testar,
     cadastrar_pagamento,
     cadastrar_pagamento_pix,
-    cadastrar_pagamento_boleto
+    cadastrar_pagamento_boleto,
+    cadastrar_itens_compra
 }

@@ -27,6 +27,10 @@ router.post("/cadastrar_pagamento_boleto", function (req, res) {
     usuarioController.cadastrar_pagamento_boleto(req, res);
 })
 
+router.post("/cadastrar_itens_compra", function (req, res) {
+    usuarioController.cadastrar_itens_compra(req, res);
+})
+
 
 router.post("/autenticar", function (req, res) {
     usuarioController.entrar(req, res);

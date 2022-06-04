@@ -410,8 +410,47 @@
         });
 
         return false;
+
+
+
+
+    
     }
 
+
+    function pagamento_pix(){
+
+        var nomeItemVar = JSON.parse(localStorage.carrinho)[0].nome
+        var precoItemVar = JSON.parse(localStorage.carrinho)[0].preco
+        var id_item_compradoVar = JSON.parse(localStorage.carrinho)[0].idItem
+
+
+        fetch("/usuarios/cadastrar_itens_compra", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                nomeItemServer: nomeItemVar,
+                precoItemServer: precoItemVar,
+                id_item_compradoServer: id_item_compradoVar
+            })
+        }).then(function (resposta) {
+
+            console.log("resposta: ", resposta);
+
+            if (resposta.ok) {
+                limparFormulario();
+                finalizarAguardar();
+            } else {
+                throw ("Houve um erro ao tentar realizar o cadastro!");
+            }
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+        });
+
+        return false;
+    }
 
 
 
@@ -487,34 +526,9 @@
         return false;   
     }
 
-    function cadastrar_itens_compra(){
-        fetch("/usuarios/cadastrar_itens_compra", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-                ruaServer: ruaVar,
-                estadoServer: estadoVar,
-                cidadeServer: cidadeVar,
-                cepServer: cepVar,
-                metodoServer: metodoVar
-            })
-        }).then(function (resposta) {
+   
 
-            console.log("resposta: ", resposta);
+        
 
-            if (resposta.ok) {
-                limparFormulario();
-                finalizarAguardar();
-            } else {
-                throw ("Houve um erro ao tentar realizar o cadastro!");
-            }
-        }).catch(function (resposta) {
-            console.log(`#ERRO: ${resposta}`);
-        });
-
-        return false;
-    }
 
 </script>
