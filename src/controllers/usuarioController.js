@@ -107,6 +107,8 @@ function cadastrar_pagamento(req, res) {
     var codigo = req.body.codigoServer;
     var nome = req.body.nomeServer;
     var numero = req.body.numeroServer;
+    var fkUsuario = req.body.idServer;
+
 
     
 
@@ -131,7 +133,7 @@ function cadastrar_pagamento(req, res) {
     }
      else {
         
-        usuarioModel.cadastrar_pagamento(rua, estado, cidade, cep, metodo, validade, codigo, nome, numero)
+        usuarioModel.cadastrar_pagamento(rua, estado, cidade, cep, metodo, validade, codigo, nome, numero, fkUsuario)
             .then(
                 function (resultado) {
                     res.json(resultado);
@@ -155,6 +157,7 @@ function cadastrar_pagamento_pix(req, res) {
     var cidade = req.body.cidadeServer;
     var cep = req.body.cepServer;
     var metodo = req.body.metodoServer;
+    var fkUsuario = req.body.idServer;
 
     
 
@@ -170,10 +173,11 @@ function cadastrar_pagamento_pix(req, res) {
         res.status(400).send("Seu metodo está undefined!");
     } else {
         
-        usuarioModel.cadastrar_pagamento_pix(rua, estado, cidade, cep, metodo)
+        usuarioModel.cadastrar_pagamento_pix(rua, estado, cidade, cep, metodo, fkUsuario)
             .then(
                 function (resultado) {
                     res.json(resultado);
+                    console.log(resultado + "resultado")
                 }
             ).catch(
                 function (erro) {
@@ -194,6 +198,8 @@ function cadastrar_pagamento_boleto(req, res) {
     var cidade = req.body.cidadeServer;
     var cep = req.body.cepServer;
     var metodo = req.body.metodoServer;
+    var fkUsuario = req.body.idServer;
+
 
     
 
@@ -209,7 +215,7 @@ function cadastrar_pagamento_boleto(req, res) {
         res.status(400).send("Seu metodo está undefined!");
     } else {
         
-        usuarioModel.cadastrar_pagamento_boleto(rua, estado, cidade, cep, metodo)
+        usuarioModel.cadastrar_pagamento_boleto(rua, estado, cidade, cep, metodo, fkUsuario)
             .then(
                 function (resultado) {
                     res.json(resultado);
@@ -226,6 +232,9 @@ function cadastrar_pagamento_boleto(req, res) {
             );
     }
 }
+
+
+
 
 
 

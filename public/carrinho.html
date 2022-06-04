@@ -150,6 +150,7 @@
 
     var carrinho = []
     var teste;
+   
 
 
     function ver_carrinho(nome, preco, idItem) {
@@ -221,6 +222,8 @@
         var total = document.querySelector('.total');
         var pagamento = document.querySelector('.card_pagamento');
         var div_carrinho = document.querySelector('.card_carrinho');
+
+       
 
         id.style.display = "flex"
         desc.style.display = "flex"
@@ -305,6 +308,7 @@
     }
 
     function pagamento_cartao(){
+       
         var ruaVar = (inp_rua.value)
         var estadoVar = (inp_estado.value)
         var cidadeVar = (inp_cidade.value)
@@ -314,6 +318,10 @@
         var codigoVar = (inp_codigo.value)
         var nomeVar = (inp_nome_cartao.value)
         var numeroVar = (inp_numero_cartao.value)
+        var idVar = sessionStorage.ID_USUARIO
+        
+
+        
 
         if(ruaVar == "" || estadoVar == "" || cidadeVar == "" || cepVar == "" ||   validadeVar == "" || codigoVar == "" || nomeVar == "" || numeroVar == ""){
             alert("Preencha todos os campos para prosseguir !!")
@@ -341,7 +349,8 @@
                 validadeServer: validadeVar,
                 codigoServer: codigoVar,
                 nomeServer: nomeVar,
-                numeroServer: numeroVar
+                numeroServer: numeroVar,
+                idServer: idVar
             })
         }).then(function (resposta) {
 
@@ -369,6 +378,9 @@
         var cidadeVar = (inp_cidade.value)
         var cepVar = (inp_cep.value)
         var metodoVar = (slc_metodo.value)
+        var idVar = sessionStorage.ID_USUARIO
+
+        console.log(idVar)
 
         fetch("/usuarios/cadastrar_pagamento_pix", {
             method: "POST",
@@ -380,7 +392,8 @@
                 estadoServer: estadoVar,
                 cidadeServer: cidadeVar,
                 cepServer: cepVar,
-                metodoServer: metodoVar
+                metodoServer: metodoVar,
+                idServer: idVar
             })
         }).then(function (resposta) {
 
@@ -408,8 +421,74 @@
         var cidadeVar = (inp_cidade.value)
         var cepVar = (inp_cep.value)
         var metodoVar = (slc_metodo.value)
+        var idVar = sessionStorage.ID_USUARIO
+
 
         fetch("/usuarios/cadastrar_pagamento_boleto", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                ruaServer: ruaVar,
+                estadoServer: estadoVar,
+                cidadeServer: cidadeVar,
+                cepServer: cepVar,
+                metodoServer: metodoVar,                 
+                idServer: idVar
+            })
+        }).then(function (resposta) {
+
+            console.log("resposta: ", resposta);
+
+            if (resposta.ok) {
+                limparFormulario();
+                finalizarAguardar();
+            } else {
+                throw ("Houve um erro ao tentar realizar o cadastro!");
+            }
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+        });
+
+        return false;
+
+
+
+
+
+        fetch("/usuarios/cadastrar_pagamento_boleto", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                ruaServer: ruaVar,
+                estadoServer: estadoVar,
+                cidadeServer: cidadeVar,
+                cepServer: cepVar,
+                metodoServer: metodoVar,                 
+                idServer: idVar
+            })
+        }).then(function (resposta) {
+
+            console.log("resposta: ", resposta);
+
+            if (resposta.ok) {
+                limparFormulario();
+                finalizarAguardar();
+            } else {
+                throw ("Houve um erro ao tentar realizar o cadastro!");
+            }
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+        });
+
+        return false;   
+    }
+
+    function cadastrar_itens_compra(){
+        fetch("/usuarios/cadastrar_itens_compra", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -437,7 +516,5 @@
 
         return false;
     }
-
-    
 
 </script>
