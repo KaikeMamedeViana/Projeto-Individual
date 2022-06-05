@@ -239,6 +239,7 @@ function cadastrar_itens_compra(req, res) {
     var id_comprado = req.body.id_item_compradoServer;
     var item_desc = req.body.nomeItemServer;
     var item_valor = req.body.precoItemServer;
+    var caminho_foto = req.body.caminhoFotoServer;
 
     if (item_desc == undefined) {
         res.status(400).send("Sua item está undefined!");
@@ -248,7 +249,7 @@ function cadastrar_itens_compra(req, res) {
         res.status(400).send("Sua id_comprado está undefined!");
     }  else {
         
-        usuarioModel.cadastrar_itens_compra(item_desc, item_valor, id_comprado)
+        usuarioModel.cadastrar_itens_compra(item_desc, item_valor, id_comprado, caminho_foto)
             .then(
                 function (resultado) {
                     res.json(resultado);

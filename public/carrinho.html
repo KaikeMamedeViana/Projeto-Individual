@@ -153,13 +153,15 @@
    
 
 
-    function ver_carrinho(nome, preco, idItem) {
-        var produto = { nome: "", preco: "", idItem: ""}
+    function ver_carrinho(nome, preco, idItem, caminhofoto) {
+        var produto = { nome: "", preco: "", idItem: "", caminhofoto: ""}
         // produto.lista_nome.push(nome);
         // produto.lista_preco.push(preco);
         produto.nome = nome
         produto.preco = preco
         produto.idItem = idItem
+        produto.caminhofoto = caminhofoto
+
         var total = 0
 
         var compraAnzois = JSON.parse(localStorage.getItem("carrinho"))
@@ -357,8 +359,10 @@
             console.log("resposta: ", resposta);
 
             if (resposta.ok) {
-                limparFormulario();
-                finalizarAguardar();
+                cadastrar_itens_compra();
+                localStorage.clear(carrinho);
+                alert("Pagamento Realizado com Sucesso!!")
+                window.location = "\anzois.html";a
             } else {
                 throw ("Houve um erro ao tentar realizar o cadastro!");
             }
@@ -400,8 +404,8 @@
             console.log("resposta: ", resposta);
 
             if (resposta.ok) {
-                limparFormulario();
-                finalizarAguardar();
+                cadastrar_itens_compra();
+                localStorage.clear(carrinho);
             } else {
                 throw ("Houve um erro ao tentar realizar o cadastro!");
             }
@@ -418,11 +422,18 @@
     }
 
 
-    function pagamento_pix(){
+    function cadastrar_itens_compra(){
 
-        var nomeItemVar = JSON.parse(localStorage.carrinho)[0].nome
-        var precoItemVar = JSON.parse(localStorage.carrinho)[0].preco
-        var id_item_compradoVar = JSON.parse(localStorage.carrinho)[0].idItem
+
+        for(contador = 0; contador < JSON.parse(localStorage.carrinho).length; contador++){
+
+            console.log("entrei aqui")
+
+
+        var nomeItemVar = JSON.parse(localStorage.carrinho)[contador].nome
+        var precoItemVar = JSON.parse(localStorage.carrinho)[contador].preco
+        var caminhoFotoVar = JSON.parse(localStorage.carrinho)[contador].caminhofoto
+        var id_item_compradoVar = Number(JSON.parse(localStorage.carrinho)[contador].idItem)
 
 
         fetch("/usuarios/cadastrar_itens_compra", {
@@ -433,6 +444,7 @@
             body: JSON.stringify({
                 nomeItemServer: nomeItemVar,
                 precoItemServer: precoItemVar,
+                caminhoFotoServer: caminhoFotoVar,
                 id_item_compradoServer: id_item_compradoVar
             })
         }).then(function (resposta) {
@@ -440,8 +452,6 @@
             console.log("resposta: ", resposta);
 
             if (resposta.ok) {
-                limparFormulario();
-                finalizarAguardar();
             } else {
                 throw ("Houve um erro ao tentar realizar o cadastro!");
             }
@@ -449,7 +459,8 @@
             console.log(`#ERRO: ${resposta}`);
         });
 
-        return false;
+
+        }
     }
 
 
@@ -481,8 +492,7 @@
             console.log("resposta: ", resposta);
 
             if (resposta.ok) {
-                limparFormulario();
-                finalizarAguardar();
+               cadastrar_itens_compra();
             } else {
                 throw ("Houve um erro ao tentar realizar o cadastro!");
             }
@@ -492,38 +502,6 @@
 
         return false;
 
-
-
-
-
-        fetch("/usuarios/cadastrar_pagamento_boleto", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-                ruaServer: ruaVar,
-                estadoServer: estadoVar,
-                cidadeServer: cidadeVar,
-                cepServer: cepVar,
-                metodoServer: metodoVar,                 
-                idServer: idVar
-            })
-        }).then(function (resposta) {
-
-            console.log("resposta: ", resposta);
-
-            if (resposta.ok) {
-                limparFormulario();
-                finalizarAguardar();
-            } else {
-                throw ("Houve um erro ao tentar realizar o cadastro!");
-            }
-        }).catch(function (resposta) {
-            console.log(`#ERRO: ${resposta}`);
-        });
-
-        return false;   
     }
 
    

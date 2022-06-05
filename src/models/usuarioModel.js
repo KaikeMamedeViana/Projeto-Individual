@@ -58,14 +58,14 @@ function cadastrar_pagamento_boleto(rua, estado, cidade, cep, metodo, fkUsuario)
 }
 
 
-function cadastrar_itens_compra(id_comprado, item_desc, item_valor) {
-    console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function cadastrar_itens_compra:", id_comprado, item_desc, item_valor);
+function cadastrar_itens_compra(item_desc, item_valor, caminho_foto, id_comprado) {
+    console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function cadastrar_itens_compra:", item_desc, item_valor, caminho_foto, id_comprado);
     var instrucao = `
-        INSERT INTO itens_compra (id_comprado, item_desc, item_valor) VALUES ('${id_comprado}','${item_desc}', 
-        '${item_valor}');
+        INSERT INTO itens_compra (item_desc, item_valor, caminho_foto, id_comprado) VALUES ('${item_desc}',
+         '${item_valor}', '${id_comprado}', ${caminho_foto} );
     `;
     console.log("Executando a instrução SQL: \n" + instrucao);
-    return database.executar(instrucao, [values]);
+    return database.executar(instrucao);
 }
 
 
