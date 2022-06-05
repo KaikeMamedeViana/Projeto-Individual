@@ -28,6 +28,11 @@ router.get("/listarIscas", function (req, res) {
     avisoController.listarIscas(req, res);
 });
 
+
+router.get("/listarVendidos", function (req, res) {
+    avisoController.listarVendidos(req, res);
+});
+
 router.get("/listar", function (req, res) {
     avisoController.listar(req, res);
 });

@@ -9,15 +9,15 @@
     <link rel="stylesheet" href="css/anzois.css">
 </head>
 
-<body onload="atualizarAnzois()">
-    <div class="background">
+<body onload="atualizarVendidos()">
+    <div class="background vendidos">
         <div class="header">
             <ul class="logo">
                 <li><img src="assets/imgs/LOGO.png"></li>
             </ul>
             <div class="header_info">
                 <a href="home.html">Espécies</a>
-                <a href="vendidos.html">Mais Vendidos</a>
+                <a href="">Mais Vendidos</a>
                 <a href="carrinho.html">Carrinho:<span id="teste">0<span></a>
             </div>
         </div>
@@ -103,8 +103,8 @@
 
 
 
-    function atualizarAnzois() {
-        fetch("/avisos/listarAnzois").then(function (resposta){
+    function atualizarVendidos() {
+        fetch("/avisos/listarVendidos").then(function (resposta){
             if (resposta.ok) {
 
                 resposta.json().then(function (resposta) {
@@ -129,9 +129,9 @@
                         var linha = document.getElementById(`linha_${fileira}`);
                         linha.innerHTML += `
                     <div class="itens">
-                        <img src="${publicacao.caminhoFoto}" alt="">
-                        <h5>${publicacao.nome}</h5>
-                        <h5>R$ ${publicacao.preço}</h5>
+                        <img src="${publicacao.caminho_foto}" alt="">
+                        <h5>${publicacao.item_desc}</h5>
+                        <h5>R$ ${publicacao.item_valor}</h5>
                         <button onclick="adiconar_carrinho('${publicacao.nome}', ${publicacao.preço}, 
                         ${publicacao.idItem}, '${publicacao.caminhoFoto}')">Adicionar ao Carrinho</button>
                     </div>`
