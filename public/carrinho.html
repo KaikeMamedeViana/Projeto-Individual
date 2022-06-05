@@ -16,7 +16,7 @@
             <div class="header_info">
                 <a href="home.html">Espécies</a>
                 <a href="vendidos.html">Mais Vendidos</a>
-                <a onclick="ver_carrinho()" href="">Carrinho:<span id="itens_carrinho">0</span></a>   
+                <a onclick="ver_carrinho()"  class="pagina_atual carrinho" href="carrinho.html">Carrinho: <span id="itens_carrinho">0</span></a>   
             </div>
         </div>
         <div class="nav_bar">
@@ -24,7 +24,7 @@
             <div><a href="Varas.html">Varas</a></div>
             <div><a href="Linhas.html">Linhas</a></div>
             <div><a href="Carretilhas.html">Carretilhas</a></div>
-            <div><a class="pagina_atual" href="Iscas.html">Iscas</a></div>
+            <div><a href="Iscas.html">Iscas</a></div>
         </div>
 
 
@@ -335,7 +335,9 @@
             alert("Código de segurança inválido")
         } else if (nomeVar.length < 3){
             alert("Nome do cartão inválido")
-        } else {
+        } else if (localStorage.carrinho == undefined){
+            alert("Nenhum item adicionado ao carrinho")
+        }   else {
 
             fetch("/usuarios/cadastrar_pagamento", {
             method: "POST",
@@ -362,7 +364,7 @@
                 cadastrar_itens_compra();
                 localStorage.clear(carrinho);
                 alert("Pagamento Realizado com Sucesso!!")
-                window.location = "\anzois.html";a
+                window.location = "\anzois.html";
             } else {
                 throw ("Houve um erro ao tentar realizar o cadastro!");
             }
@@ -384,7 +386,21 @@
         var metodoVar = (slc_metodo.value)
         var idVar = sessionStorage.ID_USUARIO
 
-        console.log(idVar)
+        if(ruaVar == "" || estadoVar == "" || cidadeVar == "" || cepVar == "" || metodoVar == ""){
+            alert("Insira todos os dados")
+        } else if (cepVar.length < 9 || cepVar.length >9){
+            alert("CEP inválido!!")
+        } else if(ruaVar.length < 3){
+            alert("Nome da Rua inválido")
+        } else if(estado.length < 3){
+            alert("Estado Inválido")
+        } else if(cidade.length < 3){
+            alert("Cidade inválida")
+        } else if(metodo == "metodo"){
+            alert("Selecione um metodo de pagamento")
+        } else if (localStorage.carrinho == undefined){
+            alert("Nenhum item adicionado ao carrinho")
+        } else {
 
         fetch("/usuarios/cadastrar_pagamento_pix", {
             method: "POST",
@@ -406,6 +422,8 @@
             if (resposta.ok) {
                 cadastrar_itens_compra();
                 localStorage.clear(carrinho);
+                alert("Pagamento Realizado com Sucesso!!")
+                window.location = "\anzois.html";
             } else {
                 throw ("Houve um erro ao tentar realizar o cadastro!");
             }
@@ -415,7 +433,7 @@
 
         return false;
 
-
+    }
 
 
     
@@ -474,6 +492,23 @@
         var idVar = sessionStorage.ID_USUARIO
 
 
+        if(ruaVar == "" || estadoVar == "" || cidadeVar == "" || cepVar == "" || metodoVar == ""){
+            alert("Insira todos os dados")
+        } else if (cepVar.length < 9 || cepVar.length >9){
+            alert("CEP inválido!!")
+        } else if(ruaVar.length < 3){
+            alert("Nome da Rua inválido")
+        } else if(estado.length < 3){
+            alert("Estado Inválido")
+        } else if(cidade.length < 3){
+            alert("Cidade inválida")
+        } else if(metodo == "metodo"){
+            alert("Selecione um metodo de pagamento")
+        } else if (localStorage.carrinho == undefined){
+            alert("Nenhum item adicionado ao carrinho")
+        } else {
+
+
         fetch("/usuarios/cadastrar_pagamento_boleto", {
             method: "POST",
             headers: {
@@ -492,7 +527,10 @@
             console.log("resposta: ", resposta);
 
             if (resposta.ok) {
-               cadastrar_itens_compra();
+                cadastrar_itens_compra();
+                localStorage.clear(carrinho);
+                alert("Pagamento Realizado com Sucesso!!")
+                window.location = "\anzois.html";
             } else {
                 throw ("Houve um erro ao tentar realizar o cadastro!");
             }
@@ -501,6 +539,7 @@
         });
 
         return false;
+    }
 
     }
 

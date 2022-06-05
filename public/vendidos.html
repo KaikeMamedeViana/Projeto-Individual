@@ -17,13 +17,13 @@
             </ul>
             <div class="header_info">
                 <a href="home.html">Espécies</a>
-                <a href="">Mais Vendidos</a>
-                <a href="carrinho.html">Carrinho:<span id="teste">0<span></a>
+                <a  class="pagina_atual vendidos" href="vendidos.html">Mais Vendidos</a>
+                <a href="carrinho.html">Carrinho</a>
             </div>
         </div>
 
         <div class="nav_bar anzois">
-            <div><a class="pagina_atual" href="Anzois.html">Anzóis</a></div>
+            <div><a href="Anzois.html">Anzóis</a></div>
             <div><a href="Varas.html">Varas</a></div>
             <div><a href="Linhas.html">Linhas</a></div>
             <div><a href="Carretilhas.html">Carretilhas</a></div>
@@ -132,8 +132,8 @@
                         <img src="${publicacao.caminho_foto}" alt="">
                         <h5>${publicacao.item_desc}</h5>
                         <h5>R$ ${publicacao.item_valor}</h5>
-                        <button onclick="adiconar_carrinho('${publicacao.nome}', ${publicacao.preço}, 
-                        ${publicacao.idItem}, '${publicacao.caminhoFoto}')">Adicionar ao Carrinho</button>
+                        <button onclick="adiconar_carrinho('${publicacao.item_desc}', ${publicacao.item_valor}, 
+                        ${publicacao.id_comprado}, '${publicacao.caminho_foto}')">Adicionar ao Carrinho</button>
                     </div>`
 
                         contador++

@@ -139,6 +139,10 @@ h5{
     width: 41px;
 }
 
+.pagina_atual.carrinho{
+    width: 91px;
+}
+
 
 button {
 	color: rgb(255, 255, 255);

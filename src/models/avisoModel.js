@@ -137,7 +137,7 @@ function listarIscas() {
 function listarVendidos() {
     console.log("ACESSEI O AVISO  MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function listar()");
     var instrucao = `
-    select item_desc, item_valor, caminho_foto  from itens_compra group by item_desc  order by count(*) desc limit 8;  
+    select item_desc, item_valor, caminho_foto, id_comprado  from itens_compra group by item_desc  order by count(*) desc limit 8;  
     `;
     console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);
