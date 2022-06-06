@@ -56,7 +56,7 @@
         </div>
         <div class="card_pagamento">
             <ul>
-                RUA: <li><input id="inp_rua" type="text"></li>
+                RUA: <li><input  id="inp_rua" type="text"></li>
                 ESTADO: <li><input id="inp_estado" type="text"></li>
                 CIDADE: <li><input id="inp_cidade" type="text"></li>
                 CEP: <li><input id="inp_cep" type="text"></li>
@@ -321,6 +321,8 @@
         var nomeVar = (inp_nome_cartao.value)
         var numeroVar = (inp_numero_cartao.value)
         var idVar = sessionStorage.ID_USUARIO
+        var totalVar =  Number(total_compra.innerHTML)
+
         
 
         
@@ -354,6 +356,7 @@
                 codigoServer: codigoVar,
                 nomeServer: nomeVar,
                 numeroServer: numeroVar,
+                totalServer: totalVar,
                 idServer: idVar
             })
         }).then(function (resposta) {
@@ -385,6 +388,7 @@
         var cepVar = (inp_cep.value)
         var metodoVar = (slc_metodo.value)
         var idVar = sessionStorage.ID_USUARIO
+        var totalVar =  Number(total_compra.innerHTML)
 
         if(ruaVar == "" || estadoVar == "" || cidadeVar == "" || cepVar == "" || metodoVar == ""){
             alert("Insira todos os dados")
@@ -392,11 +396,11 @@
             alert("CEP inválido!!")
         } else if(ruaVar.length < 3){
             alert("Nome da Rua inválido")
-        } else if(estado.length < 3){
+        } else if(estadoVar.length < 3){
             alert("Estado Inválido")
-        } else if(cidade.length < 3){
+        } else if(cidadeVar.length < 3){
             alert("Cidade inválida")
-        } else if(metodo == "metodo"){
+        } else if(metodoVar == "metodo"){
             alert("Selecione um metodo de pagamento")
         } else if (localStorage.carrinho == undefined){
             alert("Nenhum item adicionado ao carrinho")
@@ -413,7 +417,9 @@
                 cidadeServer: cidadeVar,
                 cepServer: cepVar,
                 metodoServer: metodoVar,
+                totalServer: totalVar,
                 idServer: idVar
+                
             })
         }).then(function (resposta) {
 
@@ -490,6 +496,7 @@
         var cepVar = (inp_cep.value)
         var metodoVar = (slc_metodo.value)
         var idVar = sessionStorage.ID_USUARIO
+        var totalVar =  Number(total_compra.innerHTML)
 
 
         if(ruaVar == "" || estadoVar == "" || cidadeVar == "" || cepVar == "" || metodoVar == ""){
@@ -498,11 +505,11 @@
             alert("CEP inválido!!")
         } else if(ruaVar.length < 3){
             alert("Nome da Rua inválido")
-        } else if(estado.length < 3){
+        } else if(estadoVar.length < 3){
             alert("Estado Inválido")
-        } else if(cidade.length < 3){
+        } else if(cidadeVar.length < 3){
             alert("Cidade inválida")
-        } else if(metodo == "metodo"){
+        } else if(metodoVar == "metodo"){
             alert("Selecione um metodo de pagamento")
         } else if (localStorage.carrinho == undefined){
             alert("Nenhum item adicionado ao carrinho")
@@ -519,7 +526,8 @@
                 estadoServer: estadoVar,
                 cidadeServer: cidadeVar,
                 cepServer: cepVar,
-                metodoServer: metodoVar,                 
+                metodoServer: metodoVar,  
+                totalServer: totalVar,               
                 idServer: idVar
             })
         }).then(function (resposta) {
@@ -541,9 +549,11 @@
         return false;
     }
 
+
     }
 
-   
+ 
+    
 
         
 

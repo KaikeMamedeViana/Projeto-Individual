@@ -36,4 +36,7 @@ router.post("/autenticar", function (req, res) {
     usuarioController.entrar(req, res);
 });
 
+
+
+
 module.exports = router;

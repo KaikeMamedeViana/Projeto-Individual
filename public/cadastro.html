@@ -147,8 +147,10 @@
             console.log("resposta: ", resposta);
 
             if (resposta.ok) {
-                limparFormulario();
-                finalizarAguardar();
+                alert("Cadastro Realizado com Sucesso!!!")
+                setTimeout(function () {
+                        window.location = "\login.html";
+                    }, 1000); 
             } else {
                 throw ("Houve um erro ao tentar realizar o cadastro!");
             }

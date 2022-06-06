@@ -27,35 +27,36 @@ function cadastrar(nome, sobrenome, telefone, email, senha) {
     return database.executar(instrucao);
 }
 
-function cadastrar_pagamento(rua, estado, cidade, cep, metodo, validade, codigo, nome, numero, fkUsuario) {
-    console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function cadastrar_pagamento():", rua, estado, cidade, cep, metodo, validade, codigo, nome, numero, fkUsuario);
+function cadastrar_pagamento(rua, estado, cidade, cep, metodo, validade, codigo, nome, numero, totalCompra, fkUsuario) {
+    console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function cadastrar_pagamento():", rua, estado, cidade, cep, metodo, validade, codigo, nome, numero, totalCompra, fkUsuario);
     var instrucao = `
-        INSERT INTO pagamento (rua, estado, cidade, cep, metodo, validade, codigo, nome, numero, fkUsuario) VALUES ('${rua}','${estado}', 
-        '${cidade}', '${cep}', '${metodo}', '${validade}', '${codigo}', '${nome}', '${numero}', '${fkUsuario}');
+        INSERT INTO pagamento (rua, estado, cidade, cep, metodo, validade, codigo, nome, numero, totalCompra, fkUsuario) VALUES ('${rua}','${estado}', 
+        '${cidade}', '${cep}', '${metodo}', '${validade}', '${codigo}', '${nome}', '${numero}', ${totalCompra}, ${fkUsuario});
     `;
     console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);
 }
 
-function cadastrar_pagamento_pix(rua, estado, cidade, cep, metodo, fkUsuario) {
-    console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function cadastrar_pagamento_pix():", rua, estado, cidade, cep, metodo, fkUsuario);
+function cadastrar_pagamento_pix(rua, estado, cidade, cep, metodo, totalCompra, fkUsuario) {
+    console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function cadastrar_pagamento_pix():", rua, estado, cidade, cep, metodo, totalCompra, fkUsuario);
     var instrucao = `
-        INSERT INTO pagamento (rua, estado, cidade, cep, metodo, fkUsuario) VALUES ('${rua}','${estado}', 
-        '${cidade}', '${cep}', '${metodo}', '${fkUsuario}');
+        INSERT INTO pagamento (rua, estado, cidade, cep, metodo, totalCompra, fkUsuario) VALUES ('${rua}','${estado}', 
+        '${cidade}', '${cep}', '${metodo}', ${totalCompra}, ${fkUsuario});
     `;
     console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);
 }
 
-function cadastrar_pagamento_boleto(rua, estado, cidade, cep, metodo, fkUsuario) {
-    console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function cadastrar_pagamento_pix():", rua, estado, cidade, cep, metodo, fkUsuario);
+function cadastrar_pagamento_boleto(rua, estado, cidade, cep, metodo, totalCompra, fkUsuario) {
+    console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function cadastrar_pagamento_pix():", rua, estado, cidade, cep, metodo, totalCompra, fkUsuario);
     var instrucao = `
-        INSERT INTO pagamento (rua, estado, cidade, cep, metodo, fkUsuario) VALUES ('${rua}','${estado}', 
-        '${cidade}', '${cep}', '${metodo}', '${fkUsuario}');
+        INSERT INTO pagamento (rua, estado, cidade, cep, metodo, totalCompra, fkUsuario) VALUES ('${rua}','${estado}', 
+        '${cidade}', '${cep}', '${metodo}', ${totalCompra}, ${fkUsuario});
     `;
     console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);
 }
+
 
 
 function cadastrar_itens_compra(item_desc, item_valor, caminho_foto, id_comprado) {

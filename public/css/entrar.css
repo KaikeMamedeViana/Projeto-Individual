@@ -11,6 +11,11 @@ a{
     color: white;
 }
 
+
+a:hover{
+    color: #2c78f6;
+}
+
 /*background*/
 
 .background{
@@ -162,7 +167,7 @@ h5{
 
 .pagina_atual{
     color: rgb(255, 255, 255);
-    border-bottom: 2px rgb(255, 255, 255) solid;
+    border-bottom: 2px #2c78f6 solid;
     border-radius: 5px 5px 5px 5px;
     height: 18px;
     width: 45px;
